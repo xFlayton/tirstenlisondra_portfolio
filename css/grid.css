@@ -1,0 +1,1084 @@
+/* NAVIGATION MENU */
+
+.nav-menu {
+  width: 100%;
+}
+
+.all-nav-items {
+  display: flex;
+}
+
+/* .menu-overlay {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-overlay .container.flex {
+  box-sizing: border-box;
+} */
+
+/* LANDING SECTION */
+
+.landing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "title title"
+    "image intro";
+  column-gap: 2rem;
+}
+
+.landing-section h1 {
+  grid-column: 1;
+  grid-row: 1;
+  margin-top: 0;
+}
+
+/* PROJECT SECTION */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-content: center;
+}
+
+.project-item {
+  display: block;
+}
+
+.project-item video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-item .overlay {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-item .project-skills {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* FOOTER SECTION */
+
+.footer-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.footer-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+  margin: 0;
+}
+
+.footer-back-top-btn {
+  margin-left: auto;
+}
+
+/* ABOUT SECTION */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+
+  grid-template-areas:
+    "title image"
+    "content image"
+    ".      cards";
+  column-gap: 4rem;
+  row-gap: 1rem;
+  align-items: start;
+  margin-top: 8rem;
+
+  overflow: visible;
+}
+
+.about-title {
+  grid-area: title;
+  z-index: 2;
+}
+
+.about-image {
+  top: 3.5rem;
+  grid-area: image;
+  width: 100%;
+  max-width: 60rem;
+}
+
+.about-content {
+  margin-top: 5rem;
+  grid-area: content;
+  max-width: 30rem;
+}
+
+.accent {
+  display: block;
+  margin-top: 2rem;
+}
+
+.about-content p {
+  margin-top: 0.6rem;
+}
+
+/* experience cards */
+.experience-wrapper {
+  position: relative;
+  justify-self: start;
+  width: 100%;
+  grid-area: cards;
+  margin-top: -37.5rem;
+}
+
+.experience-heading {
+  margin-bottom: 2rem;
+}
+
+.experience-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.experience-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* BYLTE SECTION */
+
+.section-label {
+  margin: 0 0 0.5rem 0;
+}
+
+.section-title {
+  margin: 0 0 2rem 0;
+}
+
+.section-subtext {
+  margin: 0;
+}
+
+.bylte-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 4rem;
+  align-items: start;
+  row-gap: 0.25rem;
+}
+
+.year-title .year {
+  display: block;
+  margin-bottom: 0rem;
+}
+
+.bylte-title {
+  margin-top: 0;
+}
+
+.bylte-meta {
+  display: flex;
+  gap: 4rem;
+  margin-top: 0.25rem;
+}
+
+.bylte-meta h3 {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
+.bylte-meta p {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
+.bylte-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 4rem;
+  align-items: start;
+  margin-top: 4rem;
+}
+
+.bylte-text h2 {
+  margin-top: 0;
+  max-width: 35rem;
+}
+
+.bylte-phone video {
+  display: block;
+  justify-content: center;
+  margin-top: 0;
+}
+
+.bylte-phone video {
+  width: 100%;
+  max-width: 60rem;
+  height: auto;
+  display: block;
+}
+
+.problem-statement.bylte .container {
+  max-width: 80rem;
+  margin-left: 0;
+}
+
+.bylte-subtitle {
+  margin-bottom: 3rem;
+}
+
+.bylte-subtitle h3.label {
+  margin-bottom: 0.5rem;
+}
+
+.bylte-subtitle .title {
+  margin: 0;
+}
+
+.metric-header h3 {
+  margin: 0;
+}
+
+.metric-header .survey-info {
+  margin-top: 0.5rem;
+}
+
+.metric-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.competition-section {
+  margin-top: 8rem;
+}
+
+.competition-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.competition-label {
+  margin-bottom: 0.5rem;
+}
+
+.competition-title {
+  margin-top: 0;
+}
+
+.competition-images {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.competition-image {
+  border-radius: 0.5rem;
+  display: block;
+}
+
+.competition-captions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 80rem;
+  margin-bottom: 2rem;
+}
+
+.competition-captions .caption p {
+  max-width: 25rem;
+}
+
+.research-section {
+  margin-top: 8rem;
+}
+
+.guiding-question {
+  text-align: center;
+  margin-top: 30rem;
+  margin-bottom: 30rem;
+}
+
+.process-step {
+  margin-bottom: 8rem;
+}
+
+.section-principle {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+}
+
+.section-principle:last-child {
+  margin-bottom: 0;
+}
+
+.process-step .bylte-wallet-mockups {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+}
+
+.process-step .feedback-caption {
+  flex: 1;
+  max-width: 20rem;
+}
+
+.process-step .bylte-wallet-mockups img {
+  width: 100%;
+  height: auto;
+}
+
+.process-step .feedback-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.bylte-ab-tests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.bylte-ab-tests img {
+  height: auto;
+}
+
+.bylte-final {
+  margin-top: 8rem;
+}
+
+.bylte-finished-product {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  margin: 3rem auto 0;
+}
+
+.bylte-finished-product img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.reflection-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 4rem;
+}
+
+.reflection-item h3 {
+  margin: 0 0 1rem;
+}
+
+.reflection-item p {
+  margin: 0;
+}
+
+.competition-image,
+.bylte-ab-tests img,
+.bylte-finished-product img,
+.research-chart img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* MEDIA QUERIES */
+/*               */
+
+@media (min-width: 75rem) {
+  .landing-grid {
+    column-gap: 2rem;
+  }
+
+  .landing-grid .intro p {
+    max-width: 26rem;
+  }
+}
+
+@media (max-width: 68.8125rem) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    margin-top: 6rem;
+  }
+
+  .about-title {
+    font-size: 3rem;
+  }
+
+  .experience-heading {
+    font-size: 2.5rem;
+  }
+
+  .about-image {
+    top: 2rem;
+    max-width: 50rem;
+  }
+
+  .about-content {
+    margin-top: 3rem;
+    max-width: 25rem;
+  }
+
+  .experience-wrapper {
+    margin-top: -30rem;
+    transform: translateX(-2%);
+    width: 110%;
+  }
+  .reflection-items {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+  .reflection-item {
+    padding: 0;
+    border-left: none;
+  }
+  .reflection-item + .reflection-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+  }
+  .guiding-question {
+    margin: 4rem 0;
+  }
+}
+
+@media (max-width: 61.5rem) {
+  .container {
+    padding: 0 1rem;
+    box-sizing: border-box;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .process-step .feedback-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .process-step .bylte-wallet-mockups,
+  .process-step .feedback-caption {
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: none;
+  }
+
+  .process-step .bylte-wallet-mockups img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 60rem) {
+  .container,
+  .menu-overlay .container.flex {
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .menu-overlay .container.flex {
+    justify-content: flex-end;
+  }
+
+  /* NAVIGATION SECTION */
+
+  .nav-menu {
+    width: auto;
+  }
+  .navbar {
+    padding: 0.5rem 0;
+  }
+
+  .nav-location {
+    font-size: 0.7rem;
+  }
+  .nav-location .clock {
+    font-size: 0.7rem;
+  }
+  .nav-button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .nav-text {
+    font-size: 0.8rem;
+  }
+
+  .overlay-nav a {
+    font-size: 3rem;
+  }
+  .landing-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "image"
+      "intro";
+    column-gap: 0;
+    row-gap: 2rem;
+    padding-top: 2rem;
+  }
+  .landing-grid h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+  }
+  .landing-grid .intro h2 {
+    font-size: 2rem;
+  }
+  .landing-grid .intro p {
+    font-size: 1rem;
+    line-height: 1.4;
+    max-width: 30rem;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer {
+    padding: 2rem;
+  }
+  .footer-buttons .footer-btn {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+  .footer-back-top-btn {
+    font-size: 0.75rem;
+  }
+
+  .menu-overlay .container.flex {
+    padding-top: 0.75rem;
+  }
+
+  .menu-overlay .nav-button-close {
+    margin-top: 0.5rem;
+  }
+
+  .overlay-nav {
+    text-align: center;
+  }
+
+  .overlay-nav ul {
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+  }
+
+  /* ABOUT PAGE */
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "image"
+      "content"
+      "cards";
+    margin-top: 4rem;
+    row-gap: 2rem;
+  }
+
+  .about-image {
+    top: 0;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .about-content {
+    margin-top: 1rem;
+  }
+
+  .experience-wrapper {
+    margin-top: 2rem;
+    transform: none;
+    width: 100%;
+    justify-self: auto;
+    padding: 0;
+  }
+}
+
+@media (min-width: 29.875rem) and (max-width: 51.0625rem) {
+  .site-footer .footer-btn {
+    font-size: 3.75rem;
+    padding: 0.75rem 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "image"
+      "content"
+      "cards";
+    margin-top: 3rem;
+    row-gap: 1.5rem;
+  }
+
+  .about-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .about-image {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .about-content {
+    margin-top: 1rem;
+    font-size: 1rem;
+    padding: 0 0.75rem;
+  }
+  .experience-wrapper {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0 0.75rem;
+  }
+  .experience-heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .experience-list {
+    gap: 1rem;
+  }
+  .experience-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* BYLTE SECTION */
+
+  .competition-images {
+    gap: 1.5rem;
+  }
+  .competition-captions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 23.6875rem) {
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .section-title,
+  .competition-title,
+  .bylte-text h2,
+  h2 {
+    font-size: 1rem;
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
+
+  .bylte-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .bylte-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .bylte-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .bylte-text,
+  .bylte-phone {
+    width: 100%;
+  }
+  .bylte-phone video {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* wallet mocks */
+  .feedback-body,
+  .bylte-wallet-mockups {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .bylte-wallet-mockups img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* design-system image */
+  .bylte-design-system img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* competition images */
+  .competition-images,
+  .bylte-ab-tests {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .competition-image,
+  .bylte-ab-tests img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 20rem) {
+  .container,
+  .menu-overlay .container.flex {
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .menu-overlay .container.flex {
+    justify-content: flex-end;
+  }
+
+  /* NAVIGATION SECTION */
+
+  .nav-menu {
+    width: auto;
+  }
+  .navbar {
+    padding: 0.5rem 0;
+  }
+
+  .nav-location {
+    font-size: 0.7rem;
+  }
+  .nav-location .clock {
+    font-size: 0.7rem;
+  }
+  .nav-button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .nav-text {
+    font-size: 0.8rem;
+  }
+
+
+  .overlay-nav a {
+    font-size: 3rem;
+  }
+
+  /* LANDING SECTION */
+  .landing-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "image"
+      "intro";
+    row-gap: 1rem;
+  }
+  .landing-section h1 {
+    font-size: 3rem; 
+    line-height: 1.1;
+  }
+
+  .landing-section h2 {
+    font-size: 1.75rem; 
+  }
+  .landing-img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .landing-grid .intro p {
+    max-width: 100% !important;
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  /* PROJECT SECTION */
+  .project-grid {
+    grid-template-columns: 1fr; 
+    gap: 1rem; 
+  }
+  .project-item .overlay h3 {
+    font-size: 1.25rem; 
+  }
+  .project-item .overlay p {
+    font-size: 0.75rem; 
+  }
+
+  /* FOOTER */
+  .site-footer {
+    padding: 2rem; 
+  }
+  .footer-buttons .footer-btn {
+    font-size: 1rem; 
+    padding: 0.5rem 0; 
+  }
+  .footer-back-top-btn {
+    font-size: 0.75rem;
+  }
+
+  .menu-overlay .container.flex {
+    padding-top: 0.75rem;
+  }
+
+  .menu-overlay .nav-button-close {
+    margin-top: 0.5rem;
+  }
+
+  .overlay-nav {
+    text-align: center;
+  }
+
+  .overlay-nav ul {
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+  }
+
+  /* ABOUT PAGE */
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows:
+      auto /* title */
+      auto /* image */
+      auto /* content */
+      auto; /* cards */
+    grid-template-areas: "title" "image" "content" "cards";
+    column-gap: 0;
+    row-gap: 1rem;
+    margin-top: 4rem;
+  }
+
+  .about-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .about-image {
+    top: 0;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .about-content {
+    margin-top: 1rem;
+    max-width: 100%;
+    padding: 0rem;
+  }
+
+  .experience-wrapper {
+    margin-top: 1rem;
+    transform: none;
+    width: 100%;
+    justify-self: auto;
+  }
+
+  .experience-heading {
+    font-size: 2rem;
+    margin-left: 0rem;
+  }
+
+  .experience-list {
+    padding: 0;
+  }
+
+  .experience-item {
+    padding: 0.75rem 0.75rem;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  /* headings & labels */
+  .section-label {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* BYLTE header -> stacked */
+  .bylte-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .year-title .year {
+    font-size: 0.875rem;
+  }
+  .bylte-title {
+    font-size: 1.5rem;
+  }
+  .bylte-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0;
+  }
+  .bylte-meta h3 {
+    font-size: 0.75rem;
+  }
+  .bylte-meta p {
+    font-size: 0.75rem;
+  }
+
+  /* BYLTE body -> stacked */
+  .bylte-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .bylte-text h2 {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+  .bylte-phone video {
+    max-width: 100%;
+  }
+
+  /* metric card */
+  .difficulty-metric-card {
+    margin: 1rem 0;
+  }
+  .metric-header h3 {
+    font-size: 1rem;
+  }
+  .metric-image {
+    width: 100%;
+  }
+
+  /* competition */
+  .competition-header {
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+  }
+  .competition-label {
+    font-size: 0.75rem;
+  }
+  .competition-title {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+  .competition-images {
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .competition-image {
+    width: 100%;
+  }
+  .competition-captions {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .competition-captions .caption p {
+    font-size: 0.75rem;
+  }
+
+  /* research chart */
+  .research-chart img {
+    width: 100%;
+  }
+
+  /* guiding question */
+  .guiding-question {
+    margin: 2rem 0;
+  }
+
+  /* process steps */
+  .process-step .section-principle {
+    margin-left: 1rem;
+    font-size: 0.875rem;
+  }
+
+  /* wallet mocks & AB tests */
+  .feedback-body,
+  .bylte-ab-tests {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .bylte-ab-tests img {
+    width: 100%;
+  }
+
+  .bylte-wallet-mockups {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .bylte-wallet-mockups img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* final product */
+  .bylte-final {
+    margin-top: 4rem;
+  }
+  .bylte-finished-product {
+    gap: 1rem;
+  }
+  .bylte-finished-product img {
+    width: 100%;
+  }
+
+  /* reflection items -> stacked */
+  .reflection-items {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+  }
+  .reflection-item {
+    border-left: none;
+    padding: 0;
+  }
+  .reflection-item + .reflection-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+  }
+
+  .bylte-design-system img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
