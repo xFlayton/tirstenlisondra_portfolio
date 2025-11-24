@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, intial-scale=1" />
+    <title>tirstenlisondra.ca</title>
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/grid.css" />
+  </head>
+
+  <body class="about-page">
+    <header class="navbar">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
+
+      <div class="container flex">
+        <nav class="nav-menu" role="navigation">
+          <ul class="all-nav-items">
+            <li class="nav-location">
+              <span>VANCOUVER, BC</span>
+              <time id="clock" class="clock" role="timer"></time>
+              <span>PACIFIC STANDARD TIME</span>
+            </li>
+          </ul>
+        </nav>
+
+        <label
+          for="nav-toggle"
+          class="nav-button nav-button-open"
+          role="button"
+          tabindex="0">
+          <span class="sr-only">Open menu</span>
+        
+          <svg width="58" height="58" viewBox="0 0 58 58">
+            <rect x="40" y="28" width="18" height="18" fill="#F0F0F0" />
+            <rect class="red" y="28" width="30" height="30" fill="#FF4646" />
+            <rect x="12" width="18" height="18" fill="#F0F0F0" />
+            <rect x="40" width="18" height="18" fill="#F0F0F0" />
+          </svg>
+        </label>
+      </div>
+
+      <div class="menu-overlay">
+        <div class="container flex">
+          <label
+            for="nav-toggle"
+            class="nav-button nav-button-close"
+            role="button"
+            tabindex="0">
+            <span class="sr-only">Close menu</span>
+          
+            <svg width="58" height="58" viewBox="0 0 58 58">
+              <rect x="40" y="28" width="18" height="18" fill="#F0F0F0" />
+              <rect class="red" y="28" width="30" height="30" fill="#FF4646" />
+              <rect x="12" width="18" height="18" fill="#F0F0F0" />
+              <rect x="40" width="18" height="18" fill="#F0F0F0" />
+            </svg>
+          </label>
+        </div>
+        <nav class="overlay-nav">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a
+                href="../assets/Resume.pdf"
+                target="_blank"
+                download="Resume.pdf"
+                >Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+   <section class="bylte-section">
+  <div class="container">
+
+    <div class="bylte-header">
+      <div class="year-title">
+        <span class="year">2025</span>
+        <h1 class="bylte-title">BYLTE</h1>
+      </div>
+      <div class="bylte-meta">
+        <div class="project-details">
+          <h3>Project Details</h3>
+          <p>2 weeks</p>
+          <p>UX/UI Design + Research</p>
+        </div>
+        <div class="team p">
+          <h3>Team</h3>
+          <p>Tirsten Lisondra</p>
+          <p>Ethan</p>
+          <p>Faith Leung</p>
+          <p>Rebecca Yeung</p>
+        </div>
+        <div class="role">
+          <h3>Designer × 4</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="bylte-body">
+      <div class="bylte-text h2">
+        <h2>
+          bylte is map-based application aimed at connecting fashion consumers to smaller businesses.
+        </h2>
+        <h2>
+          As co-designer I was tasked to create an application that improved a current-issue.
+        </h2>
+      </div>
+      <div class="bylte-phone">
+        <video
+          src="../imgs/bylte-loading-screen.mp4"
+          loop
+          autoplay
+          muted
+          playsinline
+        ></video>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="problem-statement bylte">
+  <div class="container">
+    <div class="bylte-subtitle">
+      <h3 class="section-label">The Problem</h3>
+      <h2 class="section-title">
+        People who want unique fashion pieces have a hard time finding small
+        boutiques because most shopping sites and search engines focus on big brands.
+      </h2>
+    </div>
+
+    <div class="difficulty-metric-card">
+      <div class="metric-header">
+        <h3>Difficulty finding stores carrying a certain product.</h3>
+        <p class="survey-info">Results from 81 fashion-focused participants.</p>
+      </div>
+      <img
+        src="../imgs/bylte-difficulty-metric.svg"
+        alt="Infographic showing 5% found it easy, 57% found it difficult, 38% were neutral or somewhat easy"
+        class="metric-image"/>
+    </div>
+  </div>
+</section>
+
+<section class="competition-section">
+  <div class="container">
+    <div class="competition-header">
+      <h3 class="section-label">Identifying Gaps within Dominant Platforms</h3>
+      <h2 class="section-title">
+        Looking into our direct competition, <br>I discovered major shortcomings.
+      </h2>
+    </div>
+
+    <div class="competition-captions">
+      <div class="caption">
+      <p>
+        Pinterest offers an innovative ‘Shop the Look’ feature, but the curated items often don’t match the products shown in the photos.
+      </p>
+      </div>
+    </div>
+
+    <div class="competition-images">
+      <img
+        src="../imgs/pintrest-example.svg"
+        alt="Screenshot of Pinterest 'Shop the Look' showing curated items that don't match."
+        class="competition-image"
+      />
+      <img
+        src="../imgs/googlemaps-example.svg"
+        alt="Screenshot of Google Maps results showing big chains overshadowing small boutiques."
+        class="competition-image"
+      />
+    </div>
+
+    <div class="competition-captions">
+      <div class="caption">
+        <p>
+          Users often get broad results with limited relevance to niche fashion interests, requiring extra effort to find hidden gems.
+        </p>
+      </div>
+      <div class="caption">
+        <p>
+          Larger or chain stores tend to appear more prominently, overshadowing small, independent boutiques.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="research-section">
+  <div class="container">
+    <div class="section-label">Ideating A Solution</div>
+    <div class="section-title">
+      I conducted a <span class="highlight">week-long UXR campaign</span> to determine what they would need from a potential solution.
+    </div>
+    <div class="research-chart">
+      <img
+        src="../imgs/bylte-features-graph.svg"
+        alt="Bar chart: survey results showing feature preferences from 81 participants"
+      />
+    </div>
+  </div>
+</section>
+
+
+<section class="guiding-question">
+  <div class="container">
+    <div class="section-label">After gathering the results, we came up with a question to guide our design process:</div>
+    <div class="section-title"> How might different navigational approaches impact user engagement and satisfaction when looking for specialty fashion?</div>
+  </div>
+</section>
+
+<section class="process-step">
+  <div class="container">
+    <div class="section-label">The Process – 1</div>
+    <div class="section-title"> To start, I decided on 3 key design principles: </div>
+    <div class="section-principle">1. Simple and visually clean interface prioritizing small-scale retailers.</div>
+    <div class="section-principle">2. High contrast between text and background for accessibility.</div>
+    <div class="section-principle">3. Consistent spacing and layout patterns across pages for intuitive navigation.</div>
+  </div>
+</section>
+
+<section class="process-step">
+  <div class="container">
+    <div class="section-label">The Process - 2</div>
+    <div class="section-title">To establish cosnsitency across each collaborator, <br>I created a design system.</div>
+
+    <div class="bylte-design-system">
+      <img
+        src="../imgs/bylte-design-system.svg"
+        alt="Design system for Bylte showing componenets, colors, and fonts"
+      />
+    </div>
+  </div>
+</section>
+
+<section class="process-step">
+  <div class="container">
+    <div class="section-label">The Rationale</div>
+    <div class="section-title">The idea of a customizable, tailored <br>experience really spoke to me using <br>a range of varying colors rather than <br>two main contrasting ones. <br>
+      <br>
+      
+      The final colors are made to be a <br>muted version of their base colors to <br>be easier on the eyes of the viewers, <br>reducing visual clutter, and overall <br>making the application more user friendly.
+</div>
+  </div>
+</section>
+
+<section class="process-step">
+  <div class="container">
+    <div class="section-label">The Process - 3</div>
+    <div class="section-title">Collecting inspiration from mobile wallets. <br>I created a wallet-like home screen.</div>
+
+    <div class="feedback-body">
+      <div class="bylte-wallet-mockups">
+        <img
+          src="../imgs/bylte-wallet-1.svg"
+          alt="Bylte wallet homescreen, vertical view"
+        />
+        <img
+          src="../imgs/bylte-wallet-2.svg"
+          alt="Bylte wallet homescreen, horizontal view"
+        />
+      </div>
+
+      <div class="feedback-caption">
+        <p>
+          Inspired by mobile wallets, we designed a dynamic, swipeable home screen with both vertical and horizontal views to empower user choice.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="feedback-step">
+  <div class="container">
+    <div class="section-label">Embracing Feedback and Iteration</div>
+    <div class="section-title">
+      <span class="highlight">Staying open minded</span> during the design process allows me to create solutions that <span class="highlight">truly meet users’ needs</span> rather than clinging to initial concepts.
+      <br><br>
+      The wallet concept became redundant once we introduced a bottom navigation bar – <span class="highlight">I had to let it go.</span>
+    </div>
+     <div class="bylte-ab-tests">
+        <img
+          src="../imgs/bylte-abtest-vA.svg"
+          alt="Bylte A/B testing, variation A"
+        />
+        <img
+         src="../imgs/bylte-abtest-vB.svg"
+         alt="Bylte A/B testing, variation B"
+        />
+      </div>
+
+  
+  </div>
+</section>
+
+<section class="bylte-final">
+  <div class="container">
+    <div class="section-label">The Final Product</div>
+ <div class="section-title">After the two-week sprint, heres a look at the final product.</div>
+     <div class="bylte-finished-product">
+        <img
+          src="../imgs/bylte-phone-mock.svg"
+          alt="picture of a phone on top of a rock with the bylte landing screen on it."
+        />
+        <img
+         src="../imgs/bylte-app-mockups.svg"
+         alt="3 phone mockups with different bylte pages on each screen."
+        />
+      </div>
+  </div>
+</section>
+
+<section class="bylte-reflection">
+  <div class="container">
+    <div class="section-label">Reflecting Back on My Experience</div>
+    <div class="section-title">
+      Looking back at the development process, <span class="highlight">there is always room for improvement.</span>
+    </div>
+
+    <div class="reflection-items">
+      <div class="reflection-item">
+        <h3>1.</h3>
+        <p>
+          As the sole UX researcher, I had to use surveys, competitor analysis, and persona development to validate our concept and guide design decisions.
+        </p>
+      </div>
+      <div class="reflection-item">
+        <h3>2.</h3>
+        <p>
+          Since we were all designers we faced inconsistencies in a variety of aspects, which required extra time to fix. If I were to do this again, I would implement a stricter design system early and ensure clear ownership for components.
+        </p>
+      </div>
+      <div class="reflection-item">
+        <h3>3.</h3>
+        <p>
+          I learned the importance of staying open-minded. Pivoting early after research led us to a more meaningful solution and reinforced that great design comes from adapting to user needs, not initial assumptions.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <footer id="contact" class="site-footer">
+      <p>GET IN TOUCH</p>
+
+      <div class="footer-group">
+        <div class="footer-buttons">
+          <a href="mailto:tkylelisondra2005@gmail.com" class="footer-btn">EMAIL</a>
+          <a href="https://www.instagram.com/_tirstenlisondra/" class="footer-btn">INSTAGRAM</a>
+          <a href="https://github.sfu.ca/iat339/tkl20-p3" class="footer-btn">GITHUB</a>
+          <a href="https://www.linkedin.com/in/tirsten-lisondra-7a79a3325/" class="footer-btn">LINKEDIN</a>
+        </div>
+
+        <a href="bylte.html" class="footer-back-top-btn">BACK TO TOP</a>
+      </div>
+    </footer>
+
+    <script src="../js/clock.js" defer></script>
+    <!-- CUSTOM MOUSE CURSOR -->
+    <div id="cursor-follower"></div>
+    <script src="../js/cursor.js" defer></script>
+  </body>
+</html>
