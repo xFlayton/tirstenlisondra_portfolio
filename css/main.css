@@ -1,0 +1,645 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  overscroll-behavior: none;
+  background-color: #1c1c1c;
+  animation: nav-load var(--nav-load-time) ease-out;
+  padding-top: 4rem;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 1.45rem;
+  color: #f0f0f0;
+}
+
+section {
+  margin: 0;
+}
+
+/* footer {
+  height: 16rem;
+  background-color: rgb(28, 28, 28);
+} */
+
+.container {
+  width: 100%;
+  max-width: 160rem;
+  margin: 0 auto;
+  padding: 0 4rem;
+  box-sizing: border-box;
+}
+
+.container.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* CUSTOM MOUSE CURSOR */
+
+#cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s ease, border 0.25s ease;
+  z-index: 9999;
+}
+
+#cursor-follower.hovered {
+  transform: translate(-50%, -50%) scale(2.5);
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: 0.05rem solid white;
+}
+
+/* NAVIGATION MENU */
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap; 
+  border: 0;
+}
+
+.all-nav-items {
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+.nav-location {
+  margin-top: 0rem;
+  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  color: #f0f0f0;
+}
+
+.nav-location .clock {
+  margin-top: 1rem;
+}
+
+.navbar {
+  position: fixed;
+  padding: 1rem 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(28, 28, 28, 0.5) 0%,
+    rgba(28, 28, 28, 0) 100%
+  );
+  overflow: visible;
+  z-index: 10;
+}
+
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  bottom: -1rem;
+  left: 0;
+  right: 0;
+  inset: 0;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 80%,
+    transparent 100%
+  );
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+.nav-button-container {
+  margin: 0;
+}
+
+.nav-button img {
+  width: 2.375rem;
+  height: 2.5rem;
+}
+
+.nav-text {
+  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 28, 28, 0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.menu-overlay .container.flex {
+  margin-top: 0rem;
+  padding: 1.4rem 4rem;
+}
+
+.nav-toggle:checked ~ .menu-overlay {
+  visibility: visible;
+  transition-delay: 0s;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-button svg .red {
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-toggle:checked ~ .container .nav-button-open svg .red,
+.nav-toggle:checked ~ .menu-overlay .container .nav-button-close svg .red {
+  transform: scale(0.6);
+}
+
+.nav-button {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.overlay-nav {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.overlay-nav ul {
+  list-style: none;
+  padding: 10rem;
+  margin: 0;
+}
+
+.overlay-nav li + li {
+  margin-top: 1.5rem;
+}
+
+.overlay-nav a {
+  color: #fff;
+  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  font-size: 3.75rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.overlay-nav a:hover {
+  color: #ff4646;
+}
+
+.menu-overlay .nav-button-close svg .red {
+  fill: #f0f0f0;
+}
+
+.nav-button:focus {
+  outline: rem solid #fff;
+  outline-offset: 1rem;
+}
+
+
+/* LANDING SECTION */
+
+.landing-grid {
+  padding-top: 5rem;
+}
+
+.landing-grid > h1 {
+  grid-area: title;
+  margin: 0;
+}
+
+.landing-img {
+  grid-area: image;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 30rem;
+  height: auto;
+}
+
+.landing-grid .intro {
+  grid-area: intro;
+  margin: 0;
+}
+
+.landing-grid .intro h2,
+.landing-grid .intro p {
+  margin: 0;
+}
+
+.landing-grid .intro p {
+  margin-top: 1rem;
+  line-height: 1.45rem;
+}
+
+.landing-section h1 {
+  color: #f0f0f0;
+  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 6rem;
+  line-height: 5.625rem;
+}
+
+.landing-section h2 {
+  color: #ff4646;
+  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 3.75rem;
+  padding-bottom: 1rem;
+}
+
+/* PROJECT SECTION */
+
+.project-section {
+  margin-top: 4rem;
+  padding: 0;
+}
+
+.project-item {
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.project-item .overlay {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.project-item .overlay h3 {
+  margin: 0 0 0.25rem;
+  font-size: 2rem;
+}
+
+.project-item .overlay p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* FOOTER SECTION */
+
+.site-footer {
+  padding: 4rem;
+}
+
+.site-footer p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.45rem;
+  color: #f0f0f0;
+}
+
+.footer-group {
+  margin-top: 1rem;
+}
+
+.footer-buttons {
+  padding: 0;
+}
+
+.site-footer .footer-btn {
+  text-decoration: none;
+  color: #f0f0f0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 3.75rem;
+}
+.site-footer .footer-btn:hover,
+.footer-back-top-btn:hover {
+  color: #ff4646;
+}
+
+.footer-back-top-btn {
+  position: relative;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #f0f0f0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-back-top-btn::after {
+  content: "↑";
+  display: inline-block;
+  margin-left: 0.5rem;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.footer-back-top-btn:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ABOUT PAGE */
+
+.about-title {
+  font-size: 4rem;
+  line-height: 1.2;
+  position: relative;
+  color: #fff;
+}
+
+.underline {
+  position: relative;
+}
+
+.underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.25rem;
+  width: 100%;
+  background: #ff4646;
+}
+
+.about-image {
+  position: relative;
+  border-radius: 0.5rem;
+}
+
+.accent {
+  font-size: 2rem;
+  color: #ff4646;
+}
+
+.about-content p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 1.45rem;
+  color: #f0f0f0;
+}
+
+/* experience cards */
+
+.experience-heading {
+  font-size: 3.75rem;
+  color: #ff4646;
+}
+
+.experience-item {
+  background: #2c2c2c;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.exp-info,
+.exp-date {
+  color: #f0f0f0;
+}
+
+/* BYLTE SECTION */
+
+.section-label {
+  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  color: #ff4646;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.section-title {
+  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  color: #fff;
+  font-size: 3.75rem;
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+.section-subtext {
+  font-family: "Roboto", sans-serif;
+  color: #f0f0f0;
+  font-size: 1.25rem;
+  line-height: 1.45rem;
+}
+
+.bylte-section {
+  padding: 4rem 0;
+  color: #fff;
+  background: #1c1c1c;
+}
+
+.bylte-header {
+  color: #f0f0f0;
+  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 6rem;
+  line-height: 5.625rem;
+}
+
+.year-title .year {
+  color: #ff4646;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.bylte-title {
+  font-size: 4rem;
+}
+
+.bylte-meta h3 {
+  color: #ff4646;
+  font-size: 1rem;
+  font-family: "Neue-Haas-Grotesk-Text-Pro";
+  font-weight: 400;
+}
+
+.bylte-meta p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 1.45rem;
+  color: #f0f0f0;
+}
+
+.bylte-text h2 {
+  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  line-height: 1;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2.5rem;
+}
+
+.problem-statement.bylte {
+  background: #1c1c1c;
+  color: #fff;
+  padding: 4rem 0;
+}
+
+.problem-statement.bylte .container {
+  padding: auto;
+  text-align: left;
+}
+
+.bylte-subtitle {
+  text-align: left;
+}
+
+.bylte-subtitle h3.label {
+  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  display: block;
+  color: #ff4646;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.bylte-subtitle .title {
+  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  font-weight: 500;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.difficulty-metric-card {
+  background: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.metric-header {
+  padding: 2rem;
+}
+
+.metric-header h3 {
+  margin: 0;
+  font-size: 1.75rem;
+  color: #000;
+  line-height: 1.2;
+}
+
+.metric-header .survey-info {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* COMPETITION SECTION */
+
+.competition-label {
+  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  display: block;
+  color: #ff4646;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.competition-title {
+  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  line-height: 1;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2.5rem;
+  color: #f0f0f0;
+}
+
+/* RESEARCH SECTION */
+
+.research-section,
+.research-section .section-title {
+  color: #999;
+}
+
+.research-section .section-title .highlight {
+  color: #f0f0f0;
+}
+
+/* DESIGN PRINCIPLES */
+
+.section-principle {
+  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  font-weight: 500;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: #f0f0f0;
+}
+
+/* Feedback and Iteration section */
+
+.feedback-step .section-title {
+  color: #b0b0b0;
+}
+
+.feedback-step .section-title .highlight {
+  color: #f0f0f0;
+}
+
+.bylte-finished-product {
+  padding: 0 4rem;
+}
+
+/*  REFLECTION SECTION  */
+.bylte-reflection {
+  padding: 4rem 0;
+  background: #1c1c1c;
+  color: #fff;
+}
+
+.reflection-item {
+  padding: 0 2rem;
+}
+
+.reflection-item:not(:first-child) {
+  border-left: 0.12rem solid rgba(255, 255, 255, 0.1);
+}
+
+.reflection-item h3 {
+  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  font-size: 3.75rem;
+  line-height: 1;
+  color: #ff4646;
+}
+
+.reflection-item p {
+  margin: 0;
+}
