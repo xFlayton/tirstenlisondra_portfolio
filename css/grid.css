@@ -21,18 +21,25 @@
 
 .landing-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
   grid-template-areas:
-    "title title"
-    "image intro";
-  column-gap: 2rem;
+    "title"
+    "image";
+  row-gap: 5rem;
 }
 
 .landing-section h1 {
   grid-column: 1;
   grid-row: 1;
   margin-top: 0;
+}
+
+.landing-gallery {
+  grid-area: image;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
 }
 
 /* PROJECT SECTION */
@@ -106,8 +113,9 @@
 }
 
 .about-title {
-  grid-area: title;
-  z-index: 2;
+  width: 100%;
+  padding: 6rem 4rem 4rem;
+  margin: 0;
 }
 
 .about-image {
@@ -536,28 +544,24 @@
   .overlay-nav a {
     font-size: 3rem;
   }
-  .landing-grid {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "title"
-      "image"
-      "intro";
-    column-gap: 0;
-    row-gap: 2rem;
-    padding-top: 2rem;
-  }
-  .landing-grid h1 {
-    font-size: 4rem;
-    line-height: 1.2;
-  }
-  .landing-grid .intro h2 {
-    font-size: 2rem;
-  }
-  .landing-grid .intro p {
-    font-size: 1rem;
-    line-height: 1.4;
-    max-width: 30rem;
-  }
+
+.landing-grid {
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "title title"
+    "image image"
+    "intro intro";
+}
+
+
+.landing-gallery {
+  grid-area: image; 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
   .project-grid {
     grid-template-columns: 1fr;
   }
@@ -573,24 +577,6 @@
     font-size: 0.75rem;
   }
 
-  .menu-overlay .container.flex {
-    padding-top: 0.75rem;
-  }
-
-  .menu-overlay .nav-button-close {
-    margin-top: 0.5rem;
-  }
-
-  .overlay-nav {
-    text-align: center;
-  }
-
-  .overlay-nav ul {
-    padding: 0;
-    margin: 0 auto;
-    list-style: none;
-  }
-
   /* ABOUT PAGE */
 
   .about-grid {
@@ -602,6 +588,12 @@
       "cards";
     margin-top: 4rem;
     row-gap: 2rem;
+  }
+
+   .about-title {
+    padding: 4rem 1rem 2rem;
+    font-size: 3rem;
+    line-height: 1.1;
   }
 
   .about-image {
