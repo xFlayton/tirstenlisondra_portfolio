@@ -25,6 +25,14 @@ h1 {
   line-height: 5.625rem;
 }
 
+h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color:#ff4646;
+  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  text-transform: lowercase;
+}
+
 section {
   margin: 0;
 }
@@ -325,67 +333,101 @@ section {
 
 /* ABOUT PAGE */
 
-.about-title {
+/* .about-title {
   font-size: 4rem;
   line-height: 1.2;
   position: relative;
   color: #fff;
+} */
+
+.about {
+  padding-top: 6rem;
 }
 
-.underline {
-  position: relative;
+.about-columns {
+  align-items: start;
+  padding-bottom: 4rem;
 }
 
-.underline::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 0.25rem;
-  width: 100%;
-  background: #ff4646;
+.about-label {
+  margin: 0 0 0.75rem;
 }
 
-.about-image {
-  position: relative;
-  border-radius: 0.5rem;
-}
-
-.accent {
-  font-size: 2rem;
-  color: #ff4646;
-}
-
-.about-content p {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1.25rem;
-  line-height: 1.45rem;
-  color: #f0f0f0;
-}
-
-/* experience cards */
-
-.experience-heading {
-  font-size: 3.75rem;
-  color: #ff4646;
-}
-
-.experience-item {
+.about-card {
   background: #2c2c2c;
-  padding: 1rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #535353;
 }
 
-.exp-info,
+.about-photo-left,
+.about-photo-right {
+  border-radius: 0.75rem;
+  border: 1px solid #535353;
+}
+
+/* experience cards (right column) */
+
+.experience-card {
+  background:#2c2c2c;
+  border-radius: 0.75rem;
+  border: 1px solid #535353;
+  padding: 1.25rem 1.25rem;
+}
+
+.exp-company {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* .exp-role {
+} */
+
 .exp-date {
-  color: #f0f0f0;
+  white-space: nowrap;
+  align-self: start;
 }
 
 /* BYLTE SECTION */
 
-.section-label {
+.bylte-overview {
+  padding: 6rem 0 4rem;
+  position: relative;
+}
+
+/* LEFT INFO CARD */
+
+.bylte-info-card {
+  background: #2c2c2c;
+  border: 1px solid #535353;
+  border-radius: 0.75rem;
+}
+
+/* .bylte-card-list {
+  margin-bottom: 2rem;
+} */
+
+/* RIGHT FRAME */
+
+.bylte-overview-image {
+  width: 100%;
+  min-height: 28rem;
+  border-radius: 0.75rem;
+  border: 1px solid #535353;
+  overflow:hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bylte-overview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* .section-label {
   font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
   color: #ff4646;
   font-size: 1rem;
@@ -405,30 +447,15 @@ section {
   color: #f0f0f0;
   font-size: 1.25rem;
   line-height: 1.45rem;
-}
+} */
 
-.bylte-section {
+/* .bylte-section {
   padding: 4rem 0;
   color: #fff;
   background: #1c1c1c;
-}
+} */
 
-.bylte-header {
-  color: #f0f0f0;
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 6rem;
-  line-height: 5.625rem;
-}
-
-.year-title .year {
-  color: #ff4646;
-  font-size: 1.25rem;
-  font-weight: 400;
-}
-
-.bylte-title {
+/* .bylte-title {
   font-size: 4rem;
 }
 
@@ -446,7 +473,7 @@ section {
   font-size: 1.25rem;
   line-height: 1.45rem;
   color: #f0f0f0;
-}
+} */
 
 .bylte-text h2 {
   font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
@@ -588,3 +615,5 @@ section {
 .reflection-item p {
   margin: 0;
 }
+
+
