@@ -43,14 +43,19 @@
 
    <section class="bylte-overview">
   <div class="container"> 
-    <div class="bylte-overview-grid">
 
+    <!-- ROW 1: TITLE -->
+    <div class="bylte-title-block">
+      <h2 class="bylte-year">2025</h2>
+      <h1 class="bylte-title">BYLTE</h1>
+    </div>
+    
+    <!-- ROW 2: COLUMN -->
+    <div class="bylte-overview-grid">
+      
       <!-- LEFT COLUMN -->
       <div class="bylte-overview-left">
-        <div class="bylte-title-block">
-        <h2 class="bylte-year">2025</h2>
-        <h1 class="bylte-title">BYLTE</h1>
-      </div>
+    
 
             <div class="bylte-info-card">
         <h2 class="bylte-card-label">Overview</h2>
@@ -92,21 +97,19 @@
   </div>
 </section>
 
+<!-- BYLTE PROBLEM -->
+
 <section class="problem-statement bylte">
   <div class="container">
     <div class="bylte-subtitle">
-      <h3 class="section-label">The Problem</h3>
-      <h2 class="section-title">
+      <h2 class="section-label">The Problem</h2>
+      <h3 class="section-title">
         People who want unique fashion pieces have a hard time finding small
         boutiques because most shopping sites and search engines focus on big brands.
-      </h2>
+      </h3>
     </div>
 
     <div class="difficulty-metric-card">
-      <div class="metric-header">
-        <h3>Difficulty finding stores carrying a certain product.</h3>
-        <p class="survey-info">Results from 81 fashion-focused participants.</p>
-      </div>
       <img
         src="../imgs/bylte-difficulty-metric.svg"
         alt="Infographic showing 5% found it easy, 57% found it difficult, 38% were neutral or somewhat easy"
@@ -115,62 +118,73 @@
   </div>
 </section>
 
+<!-- COMPETITION ANALYSIS SECTION -->
+
 <section class="competition-section">
   <div class="container">
     <div class="competition-header">
-      <h3 class="section-label">Identifying Gaps within Dominant Platforms</h3>
-      <h2 class="section-title">
+      <h2 class="section-label">Identifying Gaps within Dominant Platforms</h2>
+      <h3 class="section-title">
         Looking into our direct competition, <br>I discovered major shortcomings.
-      </h2>
+      </h3>
     </div>
 
+    <!-- CAPTIONS ROW -->
     <div class="competition-captions">
       <div class="caption">
-      <p>
-        Pinterest offers an innovative ‘Shop the Look’ feature, but the curated items often don’t match the products shown in the photos.
-      </p>
+        <p>
+          Pinterest offers an innovative ‘Shop the Look’ feature, but the curated items often don’t match the products shown in the photos.
+        </p>
+    </div>
+
+       <div class="caption">
+        <p>
+          Users often get broad results with limited relevance to niche fashion interests, requiring extra effort to find hidden gems.
+        </p>
+      </div>
+
+      <div class="caption">
+        <p>
+          Google Maps tends to prioritize larger chain stores in search results, making it difficult for users to discover small, independent boutiques.
+        </p>
       </div>
     </div>
+
+    <!-- IMAGE ROW -->
 
     <div class="competition-images">
       <img
         src="../imgs/pintrest-example.svg"
         alt="Screenshot of Pinterest 'Shop the Look' showing curated items that don't match."
-        class="competition-image"
+        class="competition-image competition-image-left"
       />
       <img
         src="../imgs/googlemaps-example.svg"
         alt="Screenshot of Google Maps results showing big chains overshadowing small boutiques."
-        class="competition-image"
+        class="competition-image competition-image-right"
       />
-    </div>
-
-    <div class="competition-captions">
-      <div class="caption">
-        <p>
-          Users often get broad results with limited relevance to niche fashion interests, requiring extra effort to find hidden gems.
-        </p>
-      </div>
-      <div class="caption">
-        <p>
-          Larger or chain stores tend to appear more prominently, overshadowing small, independent boutiques.
-        </p>
-      </div>
     </div>
   </div>
 </section>
 
 <section class="research-section">
   <div class="container">
-    <div class="section-label">Ideating A Solution</div>
-    <div class="section-title">
+    <h2 class="section-label">Ideating A Solution</h2>
+    <h3 class="section-title">
       I conducted a <span class="highlight">week-long UXR campaign</span> to determine what they would need from a potential solution.
-    </div>
-    <div class="research-chart">
-      <img
+    </h3>
+    <div class="research-row">
+      <div class="research-chart">
+        <img
         src="../imgs/bylte-features-graph.svg"
         alt="Bar chart: survey results showing feature preferences from 81 participants"
-      />
+        />
+      </div>
+
+      <div class="research-caption-card">
+        <p>Led a user and competitor research initiative, analyzing other map-based
+          platforms to identify pain points and hosted surveys both online and in person.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -178,25 +192,31 @@
 
 <section class="guiding-question">
   <div class="container">
-    <div class="section-label">After gathering the results, we came up with a question to guide our design process:</div>
-    <div class="section-title"> How might different navigational approaches impact user engagement and satisfaction when looking for specialty fashion?</div>
+    <h2 class="section-label">After gathering the results, we came up with a question to guide our design process:</h2>
+    <h3 class="section-title"> How might different navigational approaches impact user engagement and satisfaction when looking for specialty fashion?</h3>
   </div>
 </section>
 
 <section class="process-step">
   <div class="container">
-    <div class="section-label">The Process – 1</div>
-    <div class="section-title"> To start, I decided on 3 key design principles: </div>
-    <div class="section-principle">1. Simple and visually clean interface prioritizing small-scale retailers.</div>
-    <div class="section-principle">2. High contrast between text and background for accessibility.</div>
-    <div class="section-principle">3. Consistent spacing and layout patterns across pages for intuitive navigation.</div>
+    <h2 class="section-label">The Process – 1</h2>
+    
+    <h3 class="section-title process-title"> 
+      <span class="muted">To start, I decided on</span> 
+      <span class="highlight"> 3 key design principles: </span>
+    </h3>
+
+    <h3 class="section-principle">1. Simple and visually clean interface prioritizing small-scale retailers.</h3>
+    <h3 class="section-principle">2. High contrast between text and background for accessibility.</h3>
+    <h3 class="section-principle">3. Consistent spacing and layout patterns across pages for intuitive navigation.</h3>
+  
   </div>
 </section>
 
 <section class="process-step">
   <div class="container">
-    <div class="section-label">The Process - 2</div>
-    <div class="section-title">To establish cosnsitency across each collaborator, <br>I created a design system.</div>
+    <h2 class="section-label">The Process - 2</h2>
+    <h3 class="section-title">To establish consistency across each collaborator, <br>I created a design system.</h3>
 
     <div class="bylte-design-system">
       <img
@@ -209,19 +229,18 @@
 
 <section class="process-step">
   <div class="container">
-    <div class="section-label">The Rationale</div>
-    <div class="section-title">The idea of a customizable, tailored <br>experience really spoke to me using <br>a range of varying colors rather than <br>two main contrasting ones. <br>
+    <h2 class="section-label">The Rationale</h2>
+    <h3 class="section-title">The idea of a customizable, tailored <br>experience really spoke to me using <br>a range of varying colors rather than <br>two main contrasting ones. <br>
       <br>
-      
-      The final colors are made to be a <br>muted version of their base colors to <br>be easier on the eyes of the viewers, <br>reducing visual clutter, and overall <br>making the application more user friendly.
-</div>
+
+      The final colors are made to be a <br>muted version of their base colors to <br>be easier on the eyes of the viewers, <br>reducing visual clutter, and overall <br>making the application more user friendly.</h3>
   </div>
 </section>
 
 <section class="process-step">
   <div class="container">
-    <div class="section-label">The Process - 3</div>
-    <div class="section-title">Collecting inspiration from mobile wallets. <br>I created a wallet-like home screen.</div>
+    <h2 class="section-label">The Process - 3</h2>
+    <h3 class="section-title">Collecting inspiration from mobile wallets. <br>I created a wallet-like home screen.</h3>
 
     <div class="feedback-body">
       <div class="bylte-wallet-mockups">
@@ -235,7 +254,7 @@
         />
       </div>
 
-      <div class="feedback-caption">
+      <div class="caption">
         <p>
           Inspired by mobile wallets, we designed a dynamic, swipeable home screen with both vertical and horizontal views to empower user choice.
         </p>
@@ -246,12 +265,12 @@
 
 <section class="feedback-step">
   <div class="container">
-    <div class="section-label">Embracing Feedback and Iteration</div>
-    <div class="section-title">
+    <h2 class="section-label">Embracing Feedback and Iteration</h2>
+    <h3 class="section-title">
       <span class="highlight">Staying open minded</span> during the design process allows me to create solutions that <span class="highlight">truly meet users’ needs</span> rather than clinging to initial concepts.
       <br><br>
       The wallet concept became redundant once we introduced a bottom navigation bar – <span class="highlight">I had to let it go.</span>
-    </div>
+    </h3>
      <div class="bylte-ab-tests">
         <img
           src="../imgs/bylte-abtest-vA.svg"
@@ -269,16 +288,21 @@
 
 <section class="bylte-final">
   <div class="container">
-    <div class="section-label">The Final Product</div>
- <div class="section-title">After the two-week sprint, heres a look at the final product.</div>
+    <h2 class="section-label">The Final Product</h2>
+    <h3 class="section-title">After the two-week sprint, heres a look at the final product.</h3>
      <div class="bylte-finished-product">
         <img
           src="../imgs/bylte-phone-mock.svg"
           alt="picture of a phone on top of a rock with the bylte landing screen on it."
         />
         <img
-         src="../imgs/bylte-app-mockups.svg"
+         src="../imgs/bylte-phone-mockups(1-3).svg"
          alt="3 phone mockups with different bylte pages on each screen."
+        />
+
+        <img
+         src="../imgs/bylte-phone-mockups(4-6).svg"
+         alt="Another 3 phone mockups with different bylte pages on each screen."
         />
       </div>
   </div>
@@ -286,29 +310,35 @@
 
 <section class="bylte-reflection">
   <div class="container">
-    <div class="section-label">Reflecting Back on My Experience</div>
-    <div class="section-title">
+    <h2 class="section-label">Reflecting Back on My Experience</h2>
+    <h3 class="section-title">
       Looking back at the development process, <span class="highlight">there is always room for improvement.</span>
-    </div>
+    </h3>
 
     <div class="reflection-items">
       <div class="reflection-item">
         <h3>1.</h3>
-        <p>
+         <div class="caption">
+          <p>
           As the sole UX researcher, I had to use surveys, competitor analysis, and persona development to validate our concept and guide design decisions.
         </p>
+         </div>
       </div>
       <div class="reflection-item">
         <h3>2.</h3>
-        <p>
-          Since we were all designers we faced inconsistencies in a variety of aspects, which required extra time to fix. If I were to do this again, I would implement a stricter design system early and ensure clear ownership for components.
-        </p>
+        <div class="caption">
+          <p>
+            Since we were all designers we faced inconsistencies in a variety of aspects, which required extra time to fix. If I were to do this again, I would implement a stricter design system early and ensure clear ownership for components.
+          </p>
+        </div>
       </div>
       <div class="reflection-item">
         <h3>3.</h3>
-        <p>
+        <div class="caption">
+          <p>
           I learned the importance of staying open-minded. Pivoting early after research led us to a more meaningful solution and reinforced that great design comes from adapting to user needs, not initial assumptions.
         </p>
+         </div>
       </div>
     </div>
   </div>

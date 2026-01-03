@@ -28,9 +28,25 @@ h1 {
 h2 {
   font-size: 1.25rem;
   font-weight: 500;
-  color:#ff4646;
+  color: #ff4646;
   font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
   text-transform: lowercase;
+}
+
+h3 {
+  color: #f0f0f0;
+  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 3.75rem;
+  line-height: 3.75rem;
+
+  margin: 0;
+}
+
+/* give section headings breathing room above the content/cards */
+h3.section-title {
+  margin: 0 0 2rem 0; /* adjust: 1.5rem–3rem to taste */
 }
 
 section {
@@ -96,7 +112,7 @@ section {
   font-size: 1rem;
   font-weight: 200;
   text-decoration: none;
-  color:#f0f0f0;
+  color: #f0f0f0;
 }
 
 .nav-link:hover {
@@ -109,11 +125,13 @@ section {
 
 .sr-only {
   position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap; 
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
   border: 0;
 }
 
@@ -176,7 +194,6 @@ section {
   pointer-events: none;
   z-index: -1;
 }
-
 
 /* LANDING SECTION */
 
@@ -368,7 +385,7 @@ section {
 /* experience cards (right column) */
 
 .experience-card {
-  background:#2c2c2c;
+  background: #2c2c2c;
   border-radius: 0.75rem;
   border: 1px solid #535353;
   padding: 1.25rem 1.25rem;
@@ -379,9 +396,6 @@ section {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }
-
-/* .exp-role {
-} */
 
 .exp-date {
   white-space: nowrap;
@@ -401,23 +415,23 @@ section {
   background: #2c2c2c;
   border: 1px solid #535353;
   border-radius: 0.75rem;
-}
 
-/* .bylte-card-list {
-  margin-bottom: 2rem;
-} */
+  /* keep content off the walls */
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
 
 /* RIGHT FRAME */
 
 .bylte-overview-image {
   width: 100%;
-  min-height: 28rem;
+  height: 100%;
+  height: 48rem;
+
   border-radius: 0.75rem;
   border: 1px solid #535353;
-  overflow:hidden;
+  overflow: hidden;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .bylte-overview-image img {
@@ -425,62 +439,6 @@ section {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-/* .section-label {
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
-  color: #ff4646;
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-.section-title {
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
-  color: #fff;
-  font-size: 3.75rem;
-  line-height: 1.1;
-  font-weight: 500;
-}
-
-.section-subtext {
-  font-family: "Roboto", sans-serif;
-  color: #f0f0f0;
-  font-size: 1.25rem;
-  line-height: 1.45rem;
-} */
-
-/* .bylte-section {
-  padding: 4rem 0;
-  color: #fff;
-  background: #1c1c1c;
-} */
-
-/* .bylte-title {
-  font-size: 4rem;
-}
-
-.bylte-meta h3 {
-  color: #ff4646;
-  font-size: 1rem;
-  font-family: "Neue-Haas-Grotesk-Text-Pro";
-  font-weight: 400;
-}
-
-.bylte-meta p {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1.25rem;
-  line-height: 1.45rem;
-  color: #f0f0f0;
-} */
-
-.bylte-text h2 {
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
-  line-height: 1;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 2.5rem;
 }
 
 .problem-statement.bylte {
@@ -494,41 +452,10 @@ section {
   text-align: left;
 }
 
-.bylte-subtitle {
-  text-align: left;
-}
-
-.bylte-subtitle h3.label {
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
-  display: block;
-  color: #ff4646;
-  font-size: 1.25rem;
-  font-weight: 400;
-}
-
-.bylte-subtitle .title {
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
-  font-weight: 500;
-  font-size: 2.5rem;
-  line-height: 1.2;
-}
-
 .difficulty-metric-card {
-  background: #fff;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #535353;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.metric-header {
-  padding: 2rem;
-}
-
-.metric-header h3 {
-  margin: 0;
-  font-size: 1.75rem;
-  color: #000;
-  line-height: 1.2;
 }
 
 .metric-header .survey-info {
@@ -538,21 +465,17 @@ section {
 
 /* COMPETITION SECTION */
 
-.competition-label {
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
-  display: block;
-  color: #ff4646;
-  font-size: 1.25rem;
-  font-weight: 400;
+.competition-image {
+  border-radius: 0.75rem;
+  border: 1px solid #535353;
 }
 
-.competition-title {
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
-  line-height: 1;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 2.5rem;
-  color: #f0f0f0;
+.caption {
+  background: #2c2c2c;
+  border-radius: 0.75rem;
+  border: 1px solid #535353;
+  padding: 1.25rem;
+  box-sizing: border-box;
 }
 
 /* RESEARCH SECTION */
@@ -566,14 +489,34 @@ section {
   color: #f0f0f0;
 }
 
+.research-chart {
+  border: 1px solid #535353;
+  border-radius: 0.75rem;
+}
+
 /* DESIGN PRINCIPLES */
 
-.section-principle {
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
-  font-weight: 500;
-  font-size: 2.5rem;
-  line-height: 1.2;
+.process-step .process-title {
+  margin: 0 0 3rem 0;
+  color: #999; /* muted grey like screenshot */
+}
+
+.process-step .process-title .muted {
+  color: #999;
+}
+
+.process-step .process-title .highlight {
   color: #f0f0f0;
+}
+
+.process-step .section-principle {
+  margin: 0 0 2.5rem 0;
+  padding: 3rem;
+  background: #2c2c2c;
+  border: 1px solid #535353;
+  border-radius: 0.75rem;
+
+  margin-left: 0;
 }
 
 /* Feedback and Iteration section */
@@ -588,6 +531,12 @@ section {
 
 .bylte-finished-product {
   padding: 0 4rem;
+}
+
+.bylte-finished-product img {
+  width: 100%;
+  border: 1px solid #535353;
+  border-radius: 0.75rem; 
 }
 
 /*  REFLECTION SECTION  */
@@ -615,5 +564,3 @@ section {
 .reflection-item p {
   margin: 0;
 }
-
-
