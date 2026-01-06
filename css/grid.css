@@ -143,7 +143,7 @@
   padding: 6rem 0 4rem;
 }
 
-.bylte-overview-grid {
+.overview-grid {
   display: grid;
   grid-template-columns: minmax(0, 28rem) minmax(0, 1fr);
   gap: 3rem;
@@ -151,7 +151,7 @@
 }
 
 
-.bylte-overview-right {
+.overview-right {
   /* IMPORTANT: don't stretch to match left */
   align-self: start;
   display: block;
@@ -380,6 +380,375 @@
   border-radius: 0.75rem;
 }
 
+/* MOSAIC CASE STUDY */
+
+.mosaic {
+  padding: 6rem 0 4rem;
+}
+
+.mosaic-title-block {
+  margin-bottom: 1.25rem;
+}
+
+.mosaic-year {
+  margin: 0;
+}
+
+.mosaic-title {
+  margin: 0;
+}
+
+/* Row 2 layout */
+.overview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 28rem) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+.mosaic-overview {
+  padding: 6rem 0 4rem;
+}
+
+.mosaic-overview-left,
+.overview-right {
+  min-width: 0;
+}
+
+.mosaic-overview .overview-grid {
+  margin-bottom: 2rem;
+}
+
+
+
+/* Left card (same look as your other cards) */
+.mosaic-info-card {
+  background: #2c2c2c;
+  border: 1px solid #535353;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* ROW 3 product showcase */
+
+.mosaic-showcases {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.mosaic-showcase {
+  position: relative;
+  border: 1px solid #535353;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #2c2c2c;
+}
+
+/* wide tile (left) */
+.mosaic-showcase--wide {
+  padding-top: 44%;     
+}
+
+.mosaic-showcase--wide iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+
+  transform: scale(1.5);       /* <-- increase until it fills */
+  transform-origin: center;
+}
+
+/* tall tile (right) */
+.mosaic-showcase--tall {
+  aspect-ratio: 3 / 4; /* tweak: 4/5 if you want taller */
+}
+
+.mosaic-showcase .mosaic-media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+
+.mosaic-showcase iframe,
+.mosaic-showcase img,
+.mosaic-showcase video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border: 0;
+}
+
+
+
+.user-interviews.mosaic .interview-insights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4rem;
+
+  align-items: stretch;
+}
+  
+.user-interviews.mosaic .insight-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.user-interviews.mosaic .insight-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.user-personas.mosaic .section-title {
+  max-width: 82rem;
+  margin-bottom: 2rem;
+}
+
+.user-personas.mosaic .persona-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.user-personas.mosaic .persona-cards img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.user-experience-map.mosaic .experience-map {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.user-experience-map.mosaic .experience-map img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* DESIGN OPPORTUNITIES SECTION */
+
+.design-opportunities.mosaic {
+  padding: 6rem 0 4rem;
+}
+
+.design-opportunities.mosaic .mosaic-subtitle {
+  max-width: 90rem;
+  margin-bottom: 4rem;
+}
+
+/* Card stack */
+.design-opportunities.mosaic .opportunity-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Individual card */
+.design-opportunities.mosaic .opportunity-card {
+  background: #2c2c2c;
+  border: 1px solid #535353;
+  border-radius: 0.75rem;
+  padding: 2.5rem;
+
+  max-width: 85rem;
+}
+
+/* Large insight title */
+.design-opportunities.mosaic .opportunity-title {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+/* Inner explanation box */
+.design-opportunities.mosaic .opportunity-body {
+  background: #1f1f1f;
+  border: 1px solid #3f3f3f;
+  border-radius: 0.5rem;
+  padding: 1.25rem 1.5rem;
+}
+
+/* GUIDING QUESTION (Mosaic) */
+.guiding-question.mosaic {
+  text-align: left;       
+  margin: 0;              /* kill the 30rem margins from grid.css */
+  padding: 6rem 0 4rem;  
+   
+}
+
+.guiding-question .mosaic-subtitle {
+  max-width: 70rem;
+}
+
+.guiding-question.mosaic .guiding-question-video {
+  position: relative;
+  overflow: hidden;
+}
+
+.guiding-question-video video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+
+  object-position: center 50%;
+}
+
+.guiding-question.mosaic .guiding-question-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+
+  /* optional: only if Vimeo letterboxes inside the iframe */
+  transform: scale(1.5);
+  transform-origin: center;
+}
+
+
+.initial-mockups.mosaic {
+  padding: 6rem 0 4rem;
+}
+
+.initial-mockups.mosaic .mosaic-subtitle {
+  max-width: 90rem;
+  margin-bottom: 3.5rem;
+}
+
+/* 3-up layout */
+.initial-mockups.mosaic .mockup-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+
+  max-width: 90rem;
+}
+
+/* stack: phone then caption */
+.initial-mockups.mosaic .mockup-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers phone + caption like screenshot */
+  gap: 1.5rem;
+}
+
+.initial-mockups.mosaic .mockup-frame {
+  width: 100%;
+  max-width: 26rem;     
+  display: flex;
+  justify-content: center;
+}
+
+.initial-mockups.mosaic .mockup-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* caption card under each phone */
+.initial-mockups.mosaic .caption {
+  width: 100%;
+  max-width: 26rem;     /* matches phone width */
+  min-height: 6.5rem;   /* helps equalize card heights */
+  padding: 1.25rem;
+}
+
+/* =========================
+   EXPLORE PAGE (Mosaic) — VIDEO ONLY
+   ========================= */
+
+.explore-page.mosaic {
+  display: block;
+}
+
+.explore-header {
+  max-width: 70rem;
+  margin-bottom: 3.5rem;
+}
+
+.explore-body {
+  margin: 1.5rem 0 0;
+  max-width: 52rem;
+  color: #f0f0f0;
+  opacity: 0.92;
+}
+
+/* single media column */
+.explore-media-single {
+  display: grid;
+  grid-template-columns: minmax(0, 34rem) minmax(0, 28rem); /* phone | caption */
+  gap: 2rem;
+  align-items: start; /* top-align */
+
+  
+}
+
+/* keep phone from becoming massive */
+.explore-phone {
+  width: 100%;
+  max-width:34rem;   /* tweak 20–24rem to match screenshot */
+}
+
+/* media wrapper behaves like a phone frame */
+.explore-mockup {
+  width: 100%;
+  overflow:visible;
+}
+
+/* video fills the phone frame */
+.explore-mockup video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* caption width aligns with phone */
+.caption.explore-caption {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+/* =========================
+   MAP FEEDBACK (Mosaic) — VIDEO
+   ========================= */
+
+.map-feedback.mosaic .explore-feedback-mockup {
+  width: 100%;
+  max-width: 90rem;          /* keeps it from going ultra-wide */
+  margin: 2.5rem auto 0;     /* centers the whole block */
+}
+
+.map-feedback.mosaic .explore-feedback-mockup video {
+  width: 100%;
+  height: auto;
+  display: block;
+
+    /* fallback while loading */
+}
+
+
+
+
+
 /* MEDIA QUERIES */
 /*               */
 
@@ -537,21 +906,30 @@
   /* BYLTE SECTION */
 
   /* BYLTE overview -> stack on smaller screens */
-.bylte-overview-grid {
+.overview-grid {
   grid-template-columns: 1fr;
   gap: 1.5rem;
 }
 
-.bylte-overview-image {
+.overview-image {
   height: auto;          /* stop fixed 48rem height */
-  max-height: 32rem;     /* optional: keeps it reasonable */
+  max-height: 32rem;     
 }
 
-.bylte-overview-image img {
+.overview-image img {
   width: 100%;
   height: auto;          /* image scales naturally */
   object-fit: cover;
 }
+
+  .overview-video {
+    height: auto;
+    max-height: 32rem;   /* optional */
+  }
+
+  .overview-video video {
+    height: auto;
+  }
 
   .research-row {
     grid-template-columns: 1fr;
@@ -595,6 +973,71 @@
     margin-left: 0;
     text-align: left;
   }
+
+  /* MOSAIC SECTION */
+
+  .mosaic-showcases {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .mosaic-showcase--wide iframe {
+
+  transform: scale(1.5);       /* <-- increase until it fills */
+  transform-origin: center;
+}
+
+  .mosaic-showcase {
+    min-height: 20rem;
+  }
+
+  .user-interviews.mosaic .interview-insights {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .user-personas.mosaic .persona-cards {
+    grid-template-columns: 1fr; /* stack */
+    gap: 1rem;
+  }
+
+  .user-experience-map.mosaic .experience-map {
+    grid-template-columns: 1fr; /* stack */
+    gap: 1rem;
+  }
+  
+  
+  .design-opportunities.mosaic .opportunity-card {
+  padding: 1.5rem;
+}
+
+.design-opportunities.mosaic .opportunity-title {
+  font-size: 2rem;
+}
+
+.initial-mockups.mosaic .mockup-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .initial-mockups.mosaic .mockup-frame,
+  .initial-mockups.mosaic .caption {
+    max-width: 28rem; /* a bit wider on mobile */
+  }
+   
+  .explore-phone {
+    max-width: 28rem; /* optional: keep it controlled on mobile */
+  }
+
+  .explore-media-single {
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.caption.explore-caption {
+  margin-top: 0.75rem;
+}
+
 
 
 }
@@ -664,6 +1107,12 @@
     line-height: 1.1;
   }
 
+  /* MOSAIC */
+  .mosaic-showcase--wide iframe {
+
+  transform: scale(2);       /* <-- increase until it fills */
+  transform-origin: center;
+}
 }
 
 @media (max-width: 23.6875rem) {
@@ -1040,6 +1489,14 @@
     height: auto;
     display: block;
   }
+
+  /* MOSAIC */
+
+  .mosaic-showcase--wide iframe {
+
+  transform: scale(2.8);       /* <-- increase until it fills */
+  transform-origin: center;
+}
   
 }
 
