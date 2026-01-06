@@ -15,6 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
     el.addEventListener('mouseleave', () => dot.classList.remove('hovered'));
   });
 
+const hoverTargets = document.querySelectorAll(".project-item");
+
+hoverTargets.forEach(el => {
+  el.addEventListener("mouseenter", () => dot.classList.add("hovered"));
+  el.addEventListener("mouseleave", () => dot.classList.remove("hovered"));
+});
+
+
   // smooth follow loop
   function animate() {
     dotX += (mouseX - dotX) * speed;

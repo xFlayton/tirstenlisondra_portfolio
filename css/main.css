@@ -95,6 +95,12 @@ section {
   border: 0.05rem solid white;
 }
 
+/* Prevent iframe from hijacking mouse events */
+.project-item iframe {
+  pointer-events: none;
+}
+
+
 /* NAVIGATION MENU */
 
 .nav-right .nav-links {
