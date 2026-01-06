@@ -728,10 +728,19 @@
 }
 
 /* =========================
-   MAP FEEDBACK (Mosaic) — VIDEO
+   MAP FEEDBACK (Mosaic) — phone left + captions right (like Explore)
    ========================= */
 
-.map-feedback.mosaic .explore-feedback-mockup {
+.map-feedback.mosaic .map-feedback-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 34rem) minmax(0, 28rem); /* phone | captions */
+  gap: 2rem;
+  align-items: start;
+  margin-top: 2.5rem;
+}
+
+/* keep phone from becoming massive */
+.map-feedback.mosaic .map-feedback-phone {
   width: 100%;
   max-width: 90rem;          /* keeps it from going ultra-wide */
   margin: 2.5rem auto 0;     /* centers the whole block */
