@@ -1,40 +1,40 @@
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Aileron", sans-serif;
   font-size: 1.25rem;
   overscroll-behavior: none;
-  background-color: #1c1c1c;
+  background-color: #ffffff;
   animation: nav-load var(--nav-load-time) ease-out;
   padding-top: 4rem;
 }
 
 p {
-  font-family: "Roboto", sans-serif;
+  font-family: "Aileron", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1.25rem;
   line-height: 1.45rem;
-  color: #f0f0f0;
+  color: #000000;
 }
 
 h1 {
-  color: #f0f0f0;
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
-  font-weight: 700;
+  color: #000000;
+  font-family: "Aileron", sans-serif;
+  font-weight: 400;
   font-style: normal;
-  font-size: 6rem;
-  line-height: 5.625rem;
+  font-size: 3.75rem;
+  line-height: 4.625rem;
 }
 
 h2 {
   font-size: 1.25rem;
   font-weight: 500;
   color: #ff4646;
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  font-family: "Aileron", sans-serif;
 }
 
 h3 {
-  color: #f0f0f0;
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  color: #000000;
+  font-family: "Aileron", sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 3.75rem;
@@ -45,17 +45,13 @@ h3 {
 
 /* give section headings breathing room above the content/cards */
 h3.section-title {
-  margin: 0 0 2rem 0; /* adjust: 1.5rem–3rem to taste */
+  margin: 0 0 4rem 0; /* adjust: 1.5rem–3rem to taste */
 }
 
 section {
   margin: 0;
 }
 
-/* footer {
-  height: 16rem;
-  background-color: rgb(28, 28, 28);
-} */
 
 .container {
   width: 100%;
@@ -79,7 +75,7 @@ section {
   left: 0;
   width: 0.75rem;
   height: 0.75rem;
-  background: white;
+  background: black;
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -92,7 +88,7 @@ section {
   width: 2rem;
   height: 2rem;
   background: transparent;
-  border: 0.05rem solid white;
+  border: 0.01rem solid black;
 }
 
 /* Prevent iframe from hijacking mouse events */
@@ -113,11 +109,34 @@ section {
 }
 
 .nav-link {
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  font-family: "Aileron", sans-serif;
   font-size: 1rem;
   font-weight: 200;
   text-decoration: none;
-  color: #f0f0f0;
+  color: #000000;
+}
+
+/* HOME item */
+.nav-links li:first-child {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* spacing between HOME and the line */
+}
+
+/* The horizontal line */
+.nav-links li:first-child::after {
+  content: "";
+  flex-shrink: 0;
+  width: 80px;          
+  height: 1px;
+  background: #000000;   
+  display: block;
+  transform: translateY(0); 
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
 }
 
 .nav-link:hover {
@@ -150,11 +169,11 @@ section {
 
 .nav-location {
   margin-top: 0rem;
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  font-family: "Aileron", sans-serif;
   font-size: 1rem;
   display: flex;
   flex-direction: column;
-  color: #f0f0f0;
+  color: #000000;
 }
 
 .nav-location .clock {
@@ -211,53 +230,21 @@ section {
   margin: 0;
 }
 
-.landing-gallery img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: 1px solid #535353;
-
-  aspect-ratio: 4/5;
-  border-radius: 0.75rem;
-}
-
-.landing-grid .intro {
-  grid-area: intro;
-  margin: 0;
-}
-
-.landing-grid .intro h2,
-.landing-grid .intro p {
-  margin: 0;
-}
-
-.landing-grid .intro p {
-  margin-top: 1rem;
-  line-height: 1.45rem;
-}
-
-.landing-section h1 {
-  color: #f0f0f0;
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+.landing-section .highlight {
+  color: #000000;
+  font-family: "aaaiight", sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 6rem;
-  line-height: 5.625rem;
-}
-
-.landing-section h2 {
-  color: #ff4646;
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
-  font-weight: 500;
-  font-style: normal;
   font-size: 3.75rem;
-  padding-bottom: 1rem;
+  line-height: 4.625rem;
+
+  letter-spacing: 0.1em;
+
 }
 
 /* PROJECT SECTION */
 
 .project-section {
-  margin-top: 4rem;
   padding: 0;
 }
 
@@ -267,7 +254,7 @@ section {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-  border: 1px solid #535353;
+  border: 1px solid #a7a7a7;
   border-radius: 0.75rem;
 }
 
@@ -296,11 +283,13 @@ section {
 }
 
 .project-item .overlay h3 {
+  color:#f0f0f0;
   margin: 0 0 0.25rem;
   font-size: 2rem;
 }
 
 .project-item .overlay p {
+  color:#f0f0f0;
   margin: 0;
   font-size: 1rem;
 }
@@ -309,15 +298,6 @@ section {
 
 .site-footer {
   padding: 4rem;
-}
-
-.site-footer p {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1rem;
-  line-height: 1.45rem;
-  color: #f0f0f0;
 }
 
 .footer-group {
@@ -330,15 +310,16 @@ section {
 
 .site-footer .footer-btn {
   text-decoration: none;
-  color: #f0f0f0;
+  color: #000000;
   font-size: 1rem;
   text-transform: uppercase;
   transition: color 0.2s;
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
+  font-family: "aaaiight", sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 3.75rem;
 }
+
 .site-footer .footer-btn:hover,
 .footer-back-top-btn:hover {
   color: #ff4646;
@@ -349,7 +330,7 @@ section {
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #f0f0f0;
+  color: #000000;
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -370,19 +351,12 @@ section {
 
 /* ABOUT PAGE */
 
-/* .about-title {
-  font-size: 4rem;
-  line-height: 1.2;
-  position: relative;
-  color: #fff;
-} */
-
 .about {
   padding-top: 6rem;
 }
 
 .about-columns {
-  align-items: start;
+  align-items: stretch;
   padding-bottom: 4rem;
 }
 
@@ -391,23 +365,23 @@ section {
 }
 
 .about-card {
-  background: #2c2c2c;
+  background: #f6f6f6;
   border-radius: 0.75rem;
-  border: 1px solid #535353;
+  border: 1px solid #a7a7a7;
 }
 
 .about-photo-left,
 .about-photo-right {
   border-radius: 0.75rem;
-  border: 1px solid #535353;
+  border: 1px solid #a7a7a7;
 }
 
 /* experience cards (right column) */
 
 .experience-card {
-  background: #2c2c2c;
+  background: #f6f6f6;
   border-radius: 0.75rem;
-  border: 1px solid #535353;
+  border: 1px solid #a7a7a7;
   padding: 1.25rem 1.25rem;
 }
 
@@ -432,8 +406,8 @@ section {
 /* LEFT INFO CARD */
 
 .bylte-info-card {
-  background: #2c2c2c;
-  border: 1px solid #535353;
+  background: #f6f6f6;
+  border: 1px solid #a7a7a7;
   border-radius: 0.75rem;
 
   /* keep content off the walls */
@@ -443,18 +417,17 @@ section {
 
 /* RIGHT FRAME */
 
-.overview-image {
-  width: 100%;
+.bylte-overview-image {
   height: 100%;
   height: 48rem;
 
   border-radius: 0.75rem;
-  border: 1px solid #535353;
+  border: 1px solid #a7a7a7;
   overflow: hidden;
   display: flex;
 }
 
-.overview-image img {
+.bylte-overview-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -462,7 +435,6 @@ section {
 }
 
 .problem-statement.bylte {
-  background: #1c1c1c;
   color: #fff;
   padding: 4rem 0;
 }
@@ -474,26 +446,21 @@ section {
 
 .difficulty-metric-card {
   border-radius: 0.75rem;
-  border: 1px solid #535353;
+  border: 1px solid #a7a7a7;
   overflow: hidden;
-}
-
-.metric-header .survey-info {
-  font-size: 0.875rem;
-  color: #666;
 }
 
 /* COMPETITION SECTION */
 
 .competition-image {
   border-radius: 0.75rem;
-  border: 1px solid #535353;
+  border: 1px solid #a7a7a7;
 }
 
 .caption {
-  background: #2c2c2c;
+  background: #f6f6f6;
   border-radius: 0.75rem;
-  border: 1px solid #535353;
+  border: 1px solid #a7a7a7;
   padding: 1.25rem;
   box-sizing: border-box;
 }
@@ -502,59 +469,48 @@ section {
 
 .research-section,
 .research-section .section-title {
-  color: #999;
+  color: #777;
 }
 
-.research-section .section-title .highlight {
-  color: #f0f0f0;
-}
-
-.research-chart {
-  border: 1px solid #535353;
+.research-chart img {
+  border: 1px solid #a7a7a7;
   border-radius: 0.75rem;
 }
 
 /* DESIGN PRINCIPLES */
 
 .process-step .process-title {
-  margin: 0 0 3rem 0;
-  color: #999; /* muted grey like screenshot */
-}
-
-.process-step .process-title {
-  color: #999;
+  color: #777; /* muted grey like screenshot */
 }
 
 .muted {
   color: #999;
 }
 
-.process-step .process-title {
-  color: #f0f0f0;
-}
-
 .highlight {
-  color: #f0f0f0;
+  color: #000000;
 }
 
 .process-step .section-principle {
   margin: 0 0 2.5rem 0;
   padding: 3rem;
-  background: #2c2c2c;
-  border: 1px solid #535353;
+  background: #f6f6f6;
+  border: 1px solid #a7a7a7;
   border-radius: 0.75rem;
 
   margin-left: 0;
 }
 
+.bylte-design-system img{
+  width: 100%;
+  border: 1px solid #a7a7a7;
+  border-radius: 0.75rem;
+}
+
 /* Feedback and Iteration section */
 
 .feedback-step .section-title {
-  color: #b0b0b0;
-}
-
-.feedback-step .section-title .highlight {
-  color: #f0f0f0;
+  color: #7777;
 }
 
 .bylte-finished-product {
@@ -563,29 +519,20 @@ section {
 
 .bylte-finished-product img {
   width: 100%;
-  border: 1px solid #535353;
+  border: 1px solid #a7a7a7;
   border-radius: 0.75rem; 
 }
 
 /*  REFLECTION SECTION  */
 .bylte-reflection {
-  padding: 4rem 0;
-  background: #1c1c1c;
-  color: #fff;
+  padding: 12rem 0;
 }
 
 .reflection-item {
   padding: 0 2rem;
 }
 
-.reflection-item:not(:first-child) {
-  border-left: 0.12rem solid rgba(255, 255, 255, 0.1);
-}
-
 .reflection-item h3 {
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
-  font-size: 3.75rem;
-  line-height: 1;
   color: #ff4646;
 }
 
@@ -642,7 +589,6 @@ section {
 
 .problem-statement.mosaic .mosaic-citation {
   margin: 0.6rem 0 3.5rem;  /* close to paragraph 1, big gap before paragraph 2 */
-  font-family: "Neue-Haas-Grotesk-Text-Pro", sans-serif;
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 1.2;

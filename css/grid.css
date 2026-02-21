@@ -17,7 +17,7 @@
   grid-template-areas:
     "title"
     "image";
-  row-gap: 5rem;
+  row-gap: 2rem;
 }
 
 .landing-section h1 {
@@ -120,7 +120,7 @@
 .about-columns {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 .about-card {
@@ -132,12 +132,27 @@
   margin: 0;
 }
 
+/* columns inside the grid */
+.about-left,
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+}
+
+/* push the images to the bottom of each column */
 .about-photo-left,
 .about-photo-right {
   width: 100%;
+  height: auto;
   display: block;
+  margin-top: auto;   /* 🔑 pushes images to the bottom of their column */
+   object-fit: cover;
 }
 
+.about-photo-right {
+   aspect-ratio: 3 / 2;
+}
 /* experience cards (right column) */
 
 .experience-list {
@@ -159,7 +174,7 @@
 }
 
 .exp-company {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* BYLTE SECTION */
@@ -168,23 +183,20 @@
   padding: 6rem 0 4rem;
 }
 
-.overview-grid {
+h1.bylte-title{
+  margin-bottom: 1rem;
+  margin-top: 0rem;
+}
+
+h2.bylte-year {
+  margin: 0rem;
+}
+
+.bylte-overview-grid {
   display: grid;
   grid-template-columns: minmax(0, 28rem) minmax(0, 1fr);
   gap: 3rem;
-  align-items: start;
-}
-
-
-.overview-right {
-  /* IMPORTANT: don't stretch to match left */
-  align-self: start;
-  display: block;
-}
-
-
-.bylte-title-block {
-  margin-bottom: 1.25rem;
+  align-items: stretch;
 }
 
 /* LEFT INFO CARD */
@@ -195,6 +207,11 @@
 }
 
 /* COMPETITION SECTION */
+
+/* Tighter spacing between competition header and images */
+.competition-section .section-title {
+  margin-bottom: 0.75rem;   
+}
 
 .competition-image {
   width: 100%;
@@ -228,9 +245,8 @@
 }
 
 .research-caption-card {
-  background: #2c2c2c;
   border-radius: 0.75rem;
-  border: 1px solid #535353;
+  border: 1px solid #a7a7a7;
   padding: 1.25rem;
   box-sizing: border-box;
 }
@@ -241,34 +257,7 @@
   height: auto;
 }
 
-
 /* OLD BYLTE STYLING */
-
-
-.bylte-meta {
-  display: flex;
-  gap: 4rem;
-  margin-top: 0.25rem;
-}
-
-.bylte-meta h3 {
-  margin-top: 0;
-  margin-bottom: 0.25rem;
-}
-
-.bylte-meta p {
-  margin-top: 0;
-  margin-bottom: 0.25rem;
-}
-
-.problem-statement.bylte .container {
-  max-width: 80rem;
-  margin-left: 0;
-}
-
-.bylte-subtitle {
-  margin-bottom: 3rem;
-}
 
 .metric-image {
   display: block;
@@ -278,12 +267,13 @@
 
 .competition-section {
   margin-top: 8rem;
+  margin-bottom: 16rem;
 }
 
 .competition-header {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  
 }
 
 .competition-images {
@@ -325,7 +315,7 @@
 }
 
 .process-step {
-  margin-bottom: 8rem;
+  margin-bottom: 12rem;
 }
 
 .section-principle {
@@ -339,7 +329,7 @@
 }
 
 .process-step .bylte-wallet-mockups {
-  display: flex;
+  display: inline-flex;
   gap: 1.5rem;
   align-items: flex-start;
   justify-content: flex-start;
@@ -347,15 +337,15 @@
 }
 
 .process-step .bylte-wallet-mockups img {
-  width: 40%;
+  width: 50%;
   height: auto;
   display: block;
 }
 
 .process-step .feedback-body {
   display: grid;
-  grid-template-columns: 1fr 22rem;
-  gap: 2rem;
+  grid-template-columns: max-content 22rem;
+  column-gap: 1.5rem;
   align-items: start;
   margin-top: 2rem;
 }
@@ -401,7 +391,7 @@
   width: 100%;
   max-width: 100%;
   height: auto;
-  border: 1px solid #535353;
+  border: 1px solid #a7a7a7;
   border-radius: 0.75rem;
 }
 
@@ -998,7 +988,7 @@
   /* BYLTE SECTION */
 
   /* BYLTE overview -> stack on smaller screens */
-.overview-grid {
+.bylte-overview-grid {
   grid-template-columns: 1fr;
   gap: 1.5rem;
 }
