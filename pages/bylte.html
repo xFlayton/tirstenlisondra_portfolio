@@ -19,9 +19,15 @@
           <span class="nav-location">
             <span>VANCOUVER, BC</span>
             <time id="clock" class="clock" role="timer"></time>
-            <span>PACIFIC STANDARD TIME</span>
           </span>
         </div>
+
+         <!-- HAMBURGER BUTTON (mobile) -->
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
 
         <nav class="nav-right" role="navigation" aria-label="Primary">
           <ul class="nav-links">
@@ -30,7 +36,7 @@
             <li>
               <a
                 class="nav-link"
-                href="./assets/tirstenlisondra_resume.pdf"
+                href="../assets/tirstenlisondra_resume.pdf"
                 target="_blank"
                 rel="noopener"
                 >Resume</a>
@@ -41,6 +47,28 @@
       </div>
     </header>
 
+        <!-- FULL-SCREEN MOBILE MENU OVERLAY -->
+<div class="menu-overlay" aria-hidden="true">
+  <div class="menu-overlay-inner">
+    <button class="nav-close" type="button" aria-label="Close navigation">X</button>
+
+    <nav class="overlay-nav" role="navigation" aria-label="Mobile primary">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/about.html">About</a></li>
+        <li>
+          <a
+            href="../assets/tirstenlisondra_resume.pdf"
+            target="_blank"
+            rel="noopener"
+          >Resume</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+    <main class="page-content">
    <section class="bylte-overview">
   <div class="container"> 
 
@@ -341,6 +369,7 @@
     </div>
   </div>
 </section>
+</main>
 
 
     <footer id="contact" class="site-footer">
@@ -349,7 +378,6 @@
       <div class="footer-group">
         <div class="footer-buttons">
           <a href="mailto:tkylelisondra2005@gmail.com" class="footer-btn">EMAIL</a>
-          <a href="https://www.instagram.com/_tirstenlisondra/" class="footer-btn">INSTAGRAM</a>
           <a href="https://github.com/xFlayton/tirstenlisondra_portfolio" class="footer-btn">GITHUB</a>
           <a href="https://www.linkedin.com/in/tirsten-lisondra-7a79a3325/" class="footer-btn">LINKEDIN</a>
         </div>
@@ -362,5 +390,6 @@
     <!-- CUSTOM MOUSE CURSOR -->
     <div id="cursor-follower"></div>
     <script src="../js/cursor.js" defer></script>
+    <script src="../js/dropdown.js" defer></script>
   </body>
 </html>

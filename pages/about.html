@@ -19,9 +19,15 @@
           <span class="nav-location">
             <span>VANCOUVER, BC</span>
             <time id="clock" class="clock" role="timer"></time>
-            <span>PACIFIC STANDARD TIME</span>
           </span>
         </div>
+
+        <!-- HAMBURGER BUTTON (mobile) -->
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
 
         <nav class="nav-right" role="navigation" aria-label="Primary">
           <ul class="nav-links">
@@ -41,7 +47,28 @@
       </div>
     </header>
 
-    <main>
+        <!-- FULL-SCREEN MOBILE MENU OVERLAY -->
+<div class="menu-overlay" aria-hidden="true">
+  <div class="menu-overlay-inner">
+    <button class="nav-close" type="button" aria-label="Close navigation">X</button>
+
+    <nav class="overlay-nav" role="navigation" aria-label="Mobile primary">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/about.html">About</a></li>
+        <li>
+          <a
+            href="../assets/tirstenlisondra_resume.pdf"
+            target="_blank"
+            rel="noopener"
+          >Resume</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+    <main class="page-content">
       <section class="about">
         <h1 class = "about-title">
           A ZEALOUS SOCIALITE. <br />
@@ -84,11 +111,10 @@
             <div class="experience-list">
               <div class="experience-card">
                 <div class="exp-left">
-                  <p class="exp-company">Chit Chats</p>
-                  <p class="exp-role">Shipment Processor</p>
-                  <p class="exp-role">Customer Satisfaction Representative</p>
+                  <p class="exp-company">Royal Bank of Canada</p>
+                  <p class="exp-role">Interaction Designer</p>
                 </div>
-                <p class="exp-date">2021 - Current</p>
+                <p class="exp-date">2026 - Current</p>
               </div>
 
           <div class="experience-card">
@@ -126,11 +152,6 @@
           <a href="mailto:tkylelisondra2005@gmail.com" class="footer-btn"
             >EMAIL</a
           >
-          <a
-            href="https://www.instagram.com/_tirstenlisondra/"
-            class="footer-btn"
-            >INSTAGRAM</a
-          >
           <a href="https://github.com/xFlayton/tirstenlisondra_portfolio" class="footer-btn"
             >GITHUB</a
           >
@@ -149,5 +170,6 @@
     <!-- CUSTOM MOUSE CURSOR -->
     <div id="cursor-follower"></div>
     <script src="../js/cursor.js" defer></script>
+    <script src="../js/dropdown.js" defer></script>
   </body>
 </html>

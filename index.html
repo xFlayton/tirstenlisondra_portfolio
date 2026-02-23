@@ -13,34 +13,62 @@
 
   <body>
     <header class="navbar">
+  <div class="container flex">
+    <div class="nav-left">
+      <span class="nav-location">
+        <span>VANCOUVER, BC</span>
+        <time id="clock" class="clock" role="timer"></time>
+      </span>
+    </div>
 
-      <div class="container flex">
-        <div class="nav-left">
-          <span class="nav-location">
-            <span>VANCOUVER, BC</span>
-            <time id="clock" class="clock" role="timer"></time>
-            <span>PACIFIC STANDARD TIME</span>
-          </span>
-        </div>
+    <!-- HAMBURGER BUTTON (mobile) -->
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
 
-        <nav class="nav-right" role="navigation" aria-label="Primary">
-          <ul class="nav-links">
-            <li><a class="nav-link" href="index.html">HOME</a></li>
-            <li><a class="nav-link" href="./pages/about.html">ABOUT</a></li>
-            <li>
-              <a
-                class="nav-link"
-                href="./assets/tirstenlisondra_resume.pdf"
-                target="_blank"
-                rel="noopener"
-                >RESUME</a>
-            </li>
-            <li><a class="nav-link" href="#contact">CONTACT</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <!-- DESKTOP NAV -->
+    <nav class="nav-right" role="navigation" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a class="nav-link" href="index.html" aria-current="page">HOME</a></li>
+        <li><a class="nav-link" href="./pages/about.html">ABOUT</a></li>
+        <li>
+          <a
+            class="nav-link"
+            href="./assets/tirstenlisondra_resume.pdf"
+            target="_blank"
+            rel="noopener"
+          >RESUME</a>
+        </li>
+        <li><a class="nav-link" href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
+<!-- FULL-SCREEN MOBILE MENU OVERLAY -->
+<div class="menu-overlay" aria-hidden="true">
+  <div class="menu-overlay-inner">
+    <button class="nav-close" type="button" aria-label="Close navigation">X</button>
+
+    <nav class="overlay-nav" role="navigation" aria-label="Mobile primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="./pages/about.html">About</a></li>
+        <li>
+          <a
+            href="./assets/tirstenlisondra_resume.pdf"
+            target="_blank"
+            rel="noopener"
+          >Resume</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<main class="page-content">
     <section class="landing-section">
       <div class="container landing-grid">
         <h1>Hi, I’m <span class="highlight">Tirsten Lisondra</span>, a deeply social product designer creating experiences that are beautiful and deeply functional.</h1>
@@ -94,11 +122,6 @@
           <a href="mailto:tkylelisondra2005@gmail.com" class="footer-btn"
             >EMAIL</a
           >
-          <a
-            href="https://www.instagram.com/_tirstenlisondra/"
-            class="footer-btn"
-            >INSTAGRAM</a
-          >
           <a href="https://github.com/xFlayton/tirstenlisondra_portfolio" class="footer-btn"
             >GITHUB</a
           >
@@ -112,10 +135,14 @@
         <a href="index.html" class="footer-back-top-btn">BACK TO TOP</a>
       </div>
     </footer>
+    </main>
 
     <script src="./js/clock.js" defer></script>
     <!-- CUSTOM MOUSE CURSOR -->
     <div id="cursor-follower"></div>
     <script src="./js/cursor.js" defer></script>
+    <script src="./js/dropdown.js" defer></script>
+
+    
   </body>
 </html>

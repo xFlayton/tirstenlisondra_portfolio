@@ -8,6 +8,76 @@
   display: flex;
 }
 
+/* Hamburger button — base (desktop: hidden) */
+.nav-toggle {
+  position: absolute;         
+  top: 50%;               
+  right: 0.75rem; 
+  transform: translateY(-50%);          
+
+  display: none;            
+
+  /* the 3-bar styling */
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.1rem;
+
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* Close X – position it where the hamburger lives */
+.nav-close {
+  position: absolute;
+  top: 3%;        
+  right: 0.75rem;  
+  transform: translateY(-50%);     
+
+  width: 2.5rem;
+  height: 2.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: none;
+  border: none;
+  color: #000000;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  background: #000000;
+  border-radius: 999px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Animate hamburger into an X */
+.nav-toggle.is-open .nav-toggle-bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle.is-open .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-open .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.nav-toggle-bar + .nav-toggle-bar {
+  margin-top: 0.25rem;
+}
+
 
 /* LANDING SECTION */
 
@@ -66,9 +136,6 @@
   height: 100%;
   border: 0;
 
-  /* IMPORTANT: removes letterboxing */
-  transform: scale(1.2);
-  transform-origin: center;
 }
 
 .project-item video {
@@ -113,7 +180,7 @@
 
 .about-title {
   width: 100%;
-  padding: 6rem 4rem 4rem;
+  padding: 0rem 4rem 4rem;
   margin: 0;
 }
 
@@ -222,10 +289,20 @@ h2.bylte-year {
 
 
 .caption {
-  min-height: 6.25rem;
-  display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+
+  background: #f6f6f6;
+  border-radius: 0.75rem;
+  border: 1px solid #a7a7a7;
+  padding: 1.25rem;
+  box-sizing: border-box;
+}
+
+/* Let UX map captions hug their text */
+.user-experience-map .caption {
+  min-height: 0;
+  display: block;
 }
 
 /* RESEARCH SECTION */
@@ -298,6 +375,8 @@ h2.bylte-year {
   max-width: 82rem;
   margin-left: 0;
   margin-right: 0;
+
+  align-items: start;
 }
 
 .competition-captions .caption p {
@@ -418,7 +497,7 @@ h2.bylte-year {
   display: grid;
   grid-template-columns: minmax(0, 28rem) minmax(0, 1fr);
   gap: 3rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .mosaic-overview {
@@ -430,78 +509,113 @@ h2.bylte-year {
   min-width: 0;
 }
 
+.overview-right {
+  display: flex;           
+}
+
+.overview-right .overview-video {
+  flex: 1;                 
+}
+
 .mosaic-overview .overview-grid {
   margin-bottom: 2rem;
 }
 
+/* RIGHT FRAME (VIDEO) - Mosaic */
+.overview-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;      
+  border-radius: 0.75rem;
+  border: 1px solid #a7a7a7;
+  overflow: hidden;
+}
 
+/* Make the Vimeo video fill & crop to the card */
+.overview-video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220%;                  
+  height: 220%;
+  transform: translate(-50%, -50%);
+  border: 0;
+}
+
+.mosaic-showcase--wide .mosaic-media iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  /* oversize so no white bars at any aspect ratio */
+  width: 200% ;
+  height: 200% ;
+
+  transform: translate(-50%, -50%);
+  border: 0;
+}
 
 /* Left card (same look as your other cards) */
 .mosaic-info-card {
-  background: #2c2c2c;
-  border: 1px solid #535353;
+  background: #f6f6f6;
+  border: 1px solid #a7a7a7;
   border-radius: 0.75rem;
+
+  /* keep content off the walls */
   padding: 1.5rem;
   box-sizing: border-box;
+
+  height: 100%;
 }
 
-/* ROW 3 product showcase */
+/* ROW 3: Mosaic product showcases */
 
 .mosaic-showcases {
   margin-top: 3rem;
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  align-items: start;
+  align-items: stretch; /* both tiles stretch to same row height */
 }
 
 .mosaic-showcase {
   position: relative;
-  border: 1px solid #535353;
+  border: 1px solid #a7a7a7;
   border-radius: 0.75rem;
   overflow: hidden;
-  background: #2c2c2c;
+  height: 48rem;
 }
 
-/* wide tile (left) */
-.mosaic-showcase--wide {
-  padding-top: 44%;     
-}
-
-.mosaic-showcase--wide iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-
-  transform: scale(1.5);       /* <-- increase until it fills */
-  transform-origin: center;
-}
-
-/* tall tile (right) */
-.mosaic-showcase--tall {
-  aspect-ratio: 3 / 4; /* tweak: 4/5 if you want taller */
-}
-
+/* media wrapper fills the card */
 .mosaic-showcase .mosaic-media {
   position: absolute;
   inset: 0;
   overflow: hidden;
+
+  width: 100%;
+  height: 100%;
 }
 
-
-.mosaic-showcase iframe,
+/* anything inside (iframe, img, video) fills and crops nicely */
 .mosaic-showcase img,
 .mosaic-showcase video {
+  position: absolute;
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
-  border: 0;
 }
 
-
+/* Vimeo iframe: zoom + center so the orange fills the whole card */
+.mosaic-showcase iframe {
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  width: 170% !important;   
+  height: 170% !important;
+  transform: translate(-50%, -50%) !important;
+  border: 0;
+}
 
 .user-interviews.mosaic .interview-insights {
   display: grid;
@@ -576,8 +690,8 @@ h2.bylte-year {
 
 /* Individual card */
 .design-opportunities.mosaic .opportunity-card {
-  background: #2c2c2c;
-  border: 1px solid #535353;
+  background: #f6f6f6;
+  border: 1px solid #a7a7a7;
   border-radius: 0.75rem;
   padding: 2.5rem;
 
@@ -586,16 +700,14 @@ h2.bylte-year {
 
 /* Large insight title */
 .design-opportunities.mosaic .opportunity-title {
-  font-size: 3rem;
-  line-height: 1.1;
   margin-bottom: 1.5rem;
-  color: #ffffff;
+  color: #000000;
 }
 
 /* Inner explanation box */
 .design-opportunities.mosaic .opportunity-body {
-  background: #1f1f1f;
-  border: 1px solid #3f3f3f;
+  background: #f6f6f6;
+  border: 1px solid #a7a7a7;
   border-radius: 0.5rem;
   padding: 1.25rem 1.5rem;
 }
@@ -686,9 +798,7 @@ h2.bylte-year {
   padding: 1.25rem;
 }
 
-/* =========================
-   EXPLORE PAGE (Mosaic) — VIDEO ONLY
-   ========================= */
+/* EXPLORE PAGE (Mosaic) — VIDEO ONLY */
 
 .explore-page.mosaic {
   display: block;
@@ -800,8 +910,7 @@ h2.bylte-year {
   overflow: hidden;
 
   border-radius: 0.75rem;
-  border: 1px solid #535353;
-  background: #2c2c2c;       /* fallback while loading */
+  border: 1px solid #a7a7a7;
 }
 
 .final-results-video iframe {
@@ -818,14 +927,6 @@ h2.bylte-year {
 /* MEDIA QUERIES */
 /*               */
 
-@media (max-width: 84.75rem) {
-  .mosaic-showcase--wide iframe {
-  transform: scale(2);       
-  transform-origin: center;
-}
-
-}
-
 @media (min-width: 75rem) {
   .landing-grid {
     column-gap: 2rem;
@@ -834,6 +935,19 @@ h2.bylte-year {
   .landing-grid .intro p {
     max-width: 26rem;
   }
+
+  .mosaic-showcase--wide .mosaic-media iframe {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+
+  /* oversize so no white bars at any aspect ratio */
+  width: 240% !important;
+  height: 240% !important;
+
+  transform: translate(-50%, -50%) !important;
+  border: 0 !important;
+}
 }
 
 @media (max-width: 68.8125rem) {
@@ -857,13 +971,31 @@ h2.bylte-year {
   .guiding-question {
     margin: 4rem 0;
   }
-}
 
-@media(max-width: 67.3125rem) {
-  .mosaic-showcase--wide iframe {
-  transform: scale(2.3);       
-  transform-origin: center;
-}
+   .mosaic-overview .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .mosaic-showcases {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .mosaic-overview-left {
+    order: 2; /* move below on mobile */
+  }
+
+  .overview-right {
+    order: 1; /* move above on mobile */
+  }
+
+  .competition-captions {
+    grid-template-columns: 1fr; /* stack captions */
+    gap: 1.5rem;
+  }
+
+  
 }
 
 
@@ -873,6 +1005,18 @@ h2.bylte-year {
     box-sizing: border-box;
     max-width: 100vw;
     overflow-x: hidden;
+  }
+
+  .container {
+    padding: 0 1rem;
+    box-sizing: border-box;
+    max-width: 100vw;
+    overflow-x: hidden;   
+  }
+
+  .navbar .container.flex {
+    overflow-x: visible;   
+    overflow-y: visible;
   }
 
   .process-step .feedback-body {
@@ -895,10 +1039,11 @@ h2.bylte-year {
     display: block;
   }
 
-  html,
   body {
     overflow-x: hidden;
   }
+
+  
 }
 
 @media (max-width: 60rem) {
@@ -912,13 +1057,25 @@ h2.bylte-year {
     justify-content: flex-end;
   }
 
-  /* NAVIGATION SECTION */
+  /* NAVIGATION SECTION (mobile) */
 
-  .nav-menu {
-    width: auto;
+  /* show hamburger */
+  .nav-toggle {
+    display: flex;              /* was: block */
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;             /* approx navbar height */
+    margin-left: auto;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    height: 2.5rem;
   }
-  .navbar {
-    padding: 0.5rem 0;
+
+  /* hide desktop nav on mobile */
+  .nav-right {
+    display: none;
   }
 
   .nav-location {
@@ -927,28 +1084,13 @@ h2.bylte-year {
   .nav-location .clock {
     font-size: 0.7rem;
   }
-  .nav-button svg {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
 
-  .nav-text {
-    font-size: 0.8rem;
-  }
-
-  .overlay-nav a {
-    font-size: 3rem;
-  }
-
-.landing-grid {
-  grid-template-columns: 1fr 1fr;
+  .landing-grid {
+  grid-template-columns: 1fr;
   grid-template-areas:
     "title title"
-    "image image"
-    "intro intro";
+    "image image";
 }
-
-
 .landing-gallery {
   grid-area: image; 
   display: grid;
@@ -965,7 +1107,7 @@ h2.bylte-year {
     padding: 2rem;
   }
   .footer-buttons .footer-btn {
-    font-size: 1rem;
+    font-size: 2rem;
     padding: 0.5rem 0;
   }
   .footer-back-top-btn {
@@ -975,8 +1117,8 @@ h2.bylte-year {
   /* ABOUT PAGE */
 
    .about-title {
-    padding: 4rem 1rem 2rem;
-    font-size: 3rem;
+    padding: 4rem 0.5rem 1rem;
+    font-size: 1.5rem;
     line-height: 1.1;
   }
 
@@ -984,6 +1126,10 @@ h2.bylte-year {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+
+  .about {
+  padding-top: 0rem;
+}
 
   /* BYLTE SECTION */
 
@@ -1058,19 +1204,22 @@ h2.bylte-year {
 
   /* MOSAIC SECTION */
 
+  .mosaic-overview .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
   .mosaic-showcases {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
-  .mosaic-showcase--wide iframe {
+  .mosaic-overview-left {
+    order: 2; /* move below on mobile */
+  }
 
-  transform: scale(1.5);       /* <-- increase until it fills */
-  transform-origin: center;
-}
-
-  .mosaic-showcase {
-    min-height: 20rem;
+  .overview-right {
+    order: 1; /* move above on mobile */
   }
 
   .user-interviews.mosaic .interview-insights {
@@ -1132,22 +1281,54 @@ h2.bylte-year {
 .map-feedback.mosaic .map-feedback-phone {
   max-width: 28rem; /* match your explore mobile size */
 }
-}
 
-@media (max-width: 56.25rem) {
-  .navbar .container.flex {
-    flex-wrap: wrap;
-    align-items: flex-start;
+  /* make each showcase a 16:9 card on mobile instead of fixed 48rem */
+  .mosaic-showcase {
+    height: auto;
+    aspect-ratio: 3 / 4;
   }
 
-  .nav-right {
-    margin-top: 0.75rem; /* tweak: 0.5rem–1.25rem */
+  .mosaic-showcase .mosaic-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
 
-}
+  /* FORCE the Vimeo video to overfill and be cropped to the card */
+  .mosaic-showcase--wide iframe {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
 
+    width: 240% !important;
+    height: 240% !important;
+    max-width: none !important;
+    max-height: none !important;
+
+    transform: translate(-50%, -50%) !important;
+    border: 0 !important;
+  }
+
+  .footer-group {
+    flex-direction: column;     
+    align-items: flex-start;    
+    gap: 1.5rem;                
+  }
+
+  .footer-back-top-btn {
+    margin-left: 0;              
+  }
+
+  .footer-buttons {
+    gap: 0rem;
+  }
+}
 
 @media (min-width: 29.875rem) and (max-width: 51.0625rem) {
+
+
   .site-footer .footer-btn {
     font-size: 3.75rem;
     padding: 0.75rem 0;
@@ -1210,13 +1391,6 @@ h2.bylte-year {
     font-size: 2.5rem;
     line-height: 1.1;
   }
-
-  /* MOSAIC */
-  .mosaic-showcase--wide iframe {
-
-  transform: scale(2);       /* <-- increase until it fills */
-  transform-origin: center;
-}
 }
 
 @media (max-width: 23.6875rem) {
@@ -1289,8 +1463,8 @@ h2.bylte-year {
   }
 
   .navbar .container.flex {
-    flex-wrap: wrap;
-    align-items: flex-start;
+    position: relative;
+    align-items: center;
 }
 }
 
@@ -1309,9 +1483,6 @@ h2.bylte-year {
 
   .nav-menu {
     width: auto;
-  }
-  .navbar {
-    padding: 0.5rem 0;
   }
 
   .nav-location {
@@ -1344,7 +1515,7 @@ h2.bylte-year {
     row-gap: 1rem;
   }
   .landing-section h1 {
-    font-size: 3rem; 
+    font-size: 1.5rem; 
     line-height: 1.1;
   }
 
@@ -1379,7 +1550,7 @@ h2.bylte-year {
     padding: 2rem; 
   }
   .footer-buttons .footer-btn {
-    font-size: 1rem; 
+    font-size: 2rem; 
     padding: 0.5rem 0; 
   }
   .footer-back-top-btn {
@@ -1417,11 +1588,6 @@ h2.bylte-year {
     column-gap: 0;
     row-gap: 1rem;
     margin-top: 4rem;
-  }
-
-  .about-title {
-    font-size: 2rem;
-    line-height: 1.2;
   }
 
   .about-image {
@@ -1598,39 +1764,51 @@ h2.bylte-year {
     height: auto;
     display: block;
   }
-
-  /* MOSAIC */
-
-  .mosaic-showcase--wide iframe {
-
-  transform: scale(2.8);       /* <-- increase until it fills */
-  transform-origin: center;
-}
-  
 }
 
 /* TEXT MEDIA QUERIES */
 
 @media (max-width: 60rem) {
+
+
   h1 {
-    font-size: 3.5rem;
-    line-height: 1.05;
+    font-size: 1.5rem;
+    line-height: 1.3;
   }
 
+  h2 {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+
   h3 {
-    font-size: 2rem;
-    line-height: 1.1;
+    font-size: 1.5rem;
+    line-height: 1.3;
   }
 
   p {
     font-size: 1rem;
     line-height: 1.2;
   }
+
+  .landing-section {
+    padding-top: 3rem;
+  }
+
+  .landing-section .highlight {
+    font-size: 1.5rem;
+    line-height: 1.3rem;
+  }
+
+  .overlay-nav a {
+    font-size: 3rem;
+  }
 }
 
 @media (max-width: 23.6875rem) {
   h1 {
-    font-size: 2.25rem;
-    line-height: 1.1;
+    font-size: 1.5rem;
+    line-height: 1.5;
   }
 }
