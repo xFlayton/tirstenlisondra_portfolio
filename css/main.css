@@ -4,6 +4,11 @@ body {
   overscroll-behavior: none;
   background-color: #ffffff;
   padding-top: 4rem;
+  cursor: none;
+}
+
+*, *:hover {
+  cursor: none !important;
 }
 
 p {
@@ -92,12 +97,13 @@ section {
   left: 0;
   width: 0.75rem;
   height: 0.75rem;
-  background: black;
+  background: white;
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
   transition: transform 0.5s ease, border 0.25s ease;
   z-index: 9999;
+  mix-blend-mode: difference;
 }
 
 #cursor-follower.hovered {
@@ -105,7 +111,7 @@ section {
   width: 2rem;
   height: 2rem;
   background: transparent;
-  border: 0.01rem solid black;
+  border: 0.01rem solid white;
 }
 
 /* Prevent iframe from hijacking mouse events */
@@ -133,23 +139,6 @@ section {
   color: #000000;
 }
 
-/* HOME item */
-.nav-links li:first-child {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem; /* spacing between HOME and the line */
-}
-
-/* The horizontal line */
-.nav-links li:first-child::after {
-  content: "";
-  flex-shrink: 0;
-  width: 80px;          
-  height: 1px;
-  background: #000000;   
-  display: block;
-  transform: translateY(0); 
-}
 
 .nav-links {
   display: flex;
@@ -191,6 +180,7 @@ section {
   display: flex;
   flex-direction: column;
   color: #000000;
+  text-decoration: none;
 }
 
 .navbar {
@@ -344,7 +334,7 @@ body.nav-open .menu-overlay {
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  cursor: pointer;
+  cursor: none;
   border: 1px solid #a7a7a7;
   border-radius: 0.75rem;
 }
@@ -589,7 +579,7 @@ body.nav-open .menu-overlay {
 }
 
 .bylte-design-system img{
-  width: 100%;
+  width: 80%;
   border: 1px solid #a7a7a7;
   border-radius: 0.75rem;
 }
