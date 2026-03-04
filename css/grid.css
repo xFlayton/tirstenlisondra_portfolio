@@ -77,15 +77,20 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
+    "label"
     "title"
     "image";
-  row-gap: 2rem;
+  row-gap: 0;
+}
+
+.landing-section h2 {
+  grid-area: label;
 }
 
 .landing-section h1 {
-  grid-column: 1;
-  grid-row: 1;
+  grid-area: title;
   margin-top: 0;
+  margin-bottom: 2rem;
 }
 
 /* PROJECT SECTION */
@@ -152,7 +157,7 @@
 .footer-buttons {
   display: flex;
   flex-direction: column;
-  gap: 1.125rem;
+  gap: 0.5rem;
   margin: 0;
 }
 
@@ -222,7 +227,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding-bottom: 2rem;
+  padding: 1.25rem 1.25rem;
   gap: 2rem;
 }
 
@@ -279,13 +284,11 @@ h2.bylte-year {
 
 
 .caption {
-  align-items: flex-start;
-  justify-content: flex-start;
-
+  align-self: start;
   background: #f6f6f6;
   border-radius: 0.75rem;
   border: 1px solid #a7a7a7;
-  padding: 1.25rem;
+  padding: 0.5rem 1.25rem;
   box-sizing: border-box;
 }
 
@@ -441,15 +444,8 @@ h2.bylte-year {
 .reflection-items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
   margin-top: 4rem;
-}
-
-.reflection-item h3 {
-  margin: 0 0 1rem;
-}
-
-.reflection-item p {
-  margin: 0;
 }
 
 .bylte-ab-tests img,
@@ -616,14 +612,12 @@ h2.bylte-year {
 .user-interviews.mosaic .insight-card {
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .user-interviews.mosaic .insight-card img {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
-  object-fit: cover;
 }
 
 .user-personas.mosaic .section-title {
@@ -653,9 +647,8 @@ h2.bylte-year {
 
 .user-experience-map.mosaic .experience-map img{
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
-  object-fit: cover;
 }
 
 /* DESIGN OPPORTUNITIES SECTION */
@@ -671,8 +664,8 @@ h2.bylte-year {
 
 /* Card stack */
 .design-opportunities.mosaic .opportunity-cards {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
@@ -685,8 +678,6 @@ h2.bylte-year {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  max-width: 85rem;
 }
 
 /* Star + title row */
@@ -778,12 +769,12 @@ h2.bylte-year {
   display: flex;
   flex-direction: column;
   align-items: center; /* centers phone + caption like screenshot */
-  gap: 1.5rem;
+  gap: 0.75rem;
 }
 
 .initial-mockups.mosaic .mockup-frame {
   width: 100%;
-  max-width: 26rem;     
+  max-width: 20.8rem;
   display: flex;
   justify-content: center;
 }
@@ -797,9 +788,10 @@ h2.bylte-year {
 /* caption card under each phone */
 .initial-mockups.mosaic .caption {
   width: 100%;
-  max-width: 26rem;     /* matches phone width */
+  max-width: 20.8rem;   /* matches phone width */
   min-height: 6.5rem;   /* helps equalize card heights */
   padding: 1.25rem;
+  align-self: center;
 }
 
 /* EXPLORE PAGE (Mosaic) — VIDEO ONLY */
@@ -823,17 +815,15 @@ h2.bylte-year {
 /* single media column */
 .explore-media-single {
   display: grid;
-  grid-template-columns: minmax(0, 34rem) minmax(0, 28rem); /* phone | caption */
+  grid-template-columns: minmax(0, 26rem) minmax(0, 28rem); /* phone | caption */
   gap: 2rem;
   align-items: start; /* top-align */
-
-  
 }
 
 /* keep phone from becoming massive */
 .explore-phone {
   width: 100%;
-  max-width:34rem;   /* tweak 20–24rem to match screenshot */
+  max-width: 26rem;
 }
 
 /* media wrapper behaves like a phone frame */
@@ -862,7 +852,7 @@ h2.bylte-year {
 
 .map-feedback.mosaic .map-feedback-layout {
   display: grid;
-  grid-template-columns: minmax(0, 34rem) minmax(0, 28rem); /* phone | captions */
+  grid-template-columns: minmax(0, 26rem) minmax(0, 28rem); /* phone | captions */
   gap: 2rem;
   align-items: start;
   margin-top: 2.5rem;
@@ -871,7 +861,7 @@ h2.bylte-year {
 /* keep phone from becoming massive */
 .map-feedback.mosaic .map-feedback-phone {
   width: 100%;
-  max-width: 34rem; /* match explore-phone */
+  max-width: 26rem;
 }
 
 .map-feedback.mosaic .map-feedback-mockup {
@@ -958,15 +948,10 @@ h2.bylte-year {
 
   .reflection-items {
     grid-template-columns: 1fr;
-    row-gap: 2rem;
+    gap: 1rem;
   }
   .reflection-item {
-    padding: 0;
-    border-left: none;
-  }
-  .reflection-item + .reflection-item {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 2rem;
+    min-height: 14rem;
   }
   .guiding-question {
     margin: 4rem 0;
@@ -1080,8 +1065,9 @@ h2.bylte-year {
   .landing-grid {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "title title"
-      "image image";
+      "label"
+      "title"
+      "image";
   }
 
   .project-grid {
@@ -1212,6 +1198,10 @@ h2.bylte-year {
   }
   
   
+  .design-opportunities.mosaic .opportunity-cards {
+    grid-template-columns: 1fr;
+  }
+
   .design-opportunities.mosaic .opportunity-card {
     padding: 1.25rem 1.5rem;
   }
@@ -1418,18 +1408,15 @@ h2.bylte-year {
   .landing-grid {
     grid-template-columns: 1fr;
     grid-template-areas:
+      "label"
       "title"
       "image"
       "intro";
     row-gap: 1rem;
   }
   .landing-section h1 {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
     line-height: 1.1;
-  }
-
-  .landing-section h2 {
-    font-size: 1.75rem; 
   }
   .landing-img {
     width: 100%;
@@ -1574,12 +1561,7 @@ h2.bylte-year {
     row-gap: 1.5rem;
   }
   .reflection-item {
-    border-left: none;
-    padding: 0;
-  }
-  .reflection-item + .reflection-item {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 1rem;
+    min-height: 12rem;
   }
 
   .bylte-design-system img {
@@ -1600,10 +1582,6 @@ h2.bylte-year {
     line-height: 1.3;
   }
 
-  h2 {
-    font-size: 1rem;
-    line-height: 1.2;
-  }
 
 
   h3 {
