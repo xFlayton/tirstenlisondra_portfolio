@@ -102,47 +102,9 @@
   justify-content: center;
 }
 
-/* PROJECT CARD — VIDEO SUPPORT */
-
-.project-item {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  display: block;
-}
-
-/* media wrapper fills the card */
-.project-item .project-media {
-  position: absolute;
-  inset: 0;
-}
-
-/* iframe fills + crops like an image */
-.project-item iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-
-}
-
-.project-item video {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.project-item .overlay {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.project-item .project-skills {
+.project-item-info {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
 }
 
 /* FOOTER SECTION */
@@ -239,22 +201,22 @@
   margin-bottom: 1rem;
 }
 
-/* BYLTE SECTION */
+/* CASE STUDY OVERVIEW (shared across project pages) */
 
-.bylte-overview {
+.cs-overview {
   padding: 6rem 0 4rem;
 }
 
-h1.bylte-title{
+h1.cs-title{
   margin-bottom: 1rem;
   margin-top: 0rem;
 }
 
-h2.bylte-year {
+h2.cs-year {
   margin: 0rem;
 }
 
-.bylte-overview-grid {
+.cs-overview-grid {
   display: grid;
   grid-template-columns: minmax(0, 28rem) minmax(0, 1fr);
   gap: 3rem;
@@ -263,7 +225,7 @@ h2.bylte-year {
 
 /* LEFT INFO CARD */
 
-.bylte-info-card {
+.cs-info-card {
   flex: 1;
   height: 100%;
 }
@@ -1102,12 +1064,42 @@ h2.bylte-year {
   padding-top: 0rem;
 }
 
-  /* BYLTE SECTION */
+  /* GREEN BASIL — PROCESS */
+  .gb-process-frame {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
 
-  /* BYLTE overview -> stack on smaller screens */
-.bylte-overview-grid {
+  .gb-process-frame img {
+    width: 100%;
+  }
+
+  /* GREEN BASIL — PROBLEM + RESEARCH CARDS */
+  .gb-problem-cards,
+  .gb-research-cards {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+
+  .gb-problem-cards .caption {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* CASE STUDY OVERVIEW -> stack on smaller screens */
+.cs-overview-grid,
+.cs-overview--gb .cs-overview-grid {
   grid-template-columns: 1fr;
   gap: 1.5rem;
+}
+
+.cs-overview--gb .cs-overview-left,
+.cs-overview--gb .cs-info-card {
+  height: auto;
+}
+
+.cs-overview--gb .cs-overview-image {
+  height: 24rem;
 }
 
   .overview-video {
@@ -1428,11 +1420,11 @@ h2.bylte-year {
     grid-template-columns: 1fr; 
     gap: 1rem; 
   }
-  .project-item .overlay h3 {
-    font-size: 1.25rem; 
+  .project-item-info h3 {
+    font-size: 1.25rem;
   }
-  .project-item .overlay p {
-    font-size: 0.75rem; 
+  .project-item-info p {
+    font-size: 0.875rem;
   }
 
   /* FOOTER */
@@ -1471,7 +1463,7 @@ h2.bylte-year {
     padding: 0 0.5rem;
   }
 
-  .bylte-title {
+  .cs-title {
     font-size: 1.5rem;
   }
 

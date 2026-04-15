@@ -115,10 +115,7 @@ section {
   border: 0.01rem solid white;
 }
 
-/* Prevent iframe from hijacking mouse events */
-.project-item iframe {
-  pointer-events: none;
-}
+
 
 
 /* NAVIGATION MENU */
@@ -333,49 +330,102 @@ body.nav-open .menu-overlay {
 
 .project-item {
   position: relative;
-  overflow: hidden;
+  aspect-ratio: 16 / 9;
   text-decoration: none;
   color: inherit;
   cursor: none;
   border: 1px solid #a7a7a7;
   border-radius: 0.75rem;
+  overflow: hidden;
+  transition: border-color 0.25s ease;
 }
 
-.project-item img {
+.project-item:hover {
+  border-color: #000000;
+}
+
+/* Image fills the full card */
+.project-item-media {
+  position: absolute;
+  inset: 0;
+}
+
+.project-item-media img {
   width: 100%;
   height: 100%;
-  display: block;      /* removes inline gap */
-  object-fit: cover;   /* fills/crops like a cover image */
-
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.project-item {
-  aspect-ratio: 16 / 9;  /* or whatever you want */
+.project-item:hover .project-item-media img {
+  transform: scale(1.04);
 }
 
-
-.project-item .overlay {
+/* Gradual blur that builds naturally toward the bottom */
+.project-item-media::after {
+  content: '';
   position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  right: 1rem;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  inset: 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  -webkit-mask-image: linear-gradient(to bottom,
+    transparent 0%,
+    transparent 50%,
+    rgba(0,0,0,0.25) 65%,
+    black 85%
+  );
+  mask-image: linear-gradient(to bottom,
+    transparent 0%,
+    transparent 50%,
+    rgba(0,0,0,0.25) 65%,
+    black 85%
+  );
+  pointer-events: none;
 }
 
-.project-item .overlay h3 {
-  color:#f0f0f0;
+/* Text overlaid on the blur */
+.project-item-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 1.5rem 1.5rem;
+  z-index: 1;
+}
+
+.project-item-info h3 {
+  color: #000000;
+  font-size: 1.5rem;
   margin: 0 0 0.25rem;
-
 }
 
-.project-item .overlay p {
-  color:#f0f0f0;
-  margin: 0;
+.project-item-info p {
+  color: #111111;
   font-size: 1rem;
+  margin: 0;
+  line-height: 1.4;
 }
+
+/* Mockup cards — show full image without cropping */
+.project-item--contain .project-item-media {
+  background-color: #efefed;
+}
+
+.project-item--contain .project-item-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-item--contain .project-item-media img {
+  object-fit: contain;
+  object-position: center;
+  width: 80%;
+  height: 80%;
+  padding: 0;
+}
+
 
 /* FOOTER SECTION */
 
@@ -491,16 +541,16 @@ body.nav-open .menu-overlay {
   margin: 0;
 }
 
-/* BYLTE SECTION */
+/* CASE STUDY OVERVIEW (shared across project pages) */
 
-.bylte-overview {
+.cs-overview {
   padding: 6rem 0 4rem;
   position: relative;
 }
 
 /* LEFT INFO CARD */
 
-.bylte-info-card {
+.cs-info-card {
   background: #f6f6f6;
   border: 1px solid #a7a7a7;
   border-radius: 0.75rem;
@@ -512,7 +562,7 @@ body.nav-open .menu-overlay {
 
 /* RIGHT FRAME */
 
-.bylte-overview-image {
+.cs-overview-image {
   height: 100%;
   height: 48rem;
 
@@ -522,11 +572,141 @@ body.nav-open .menu-overlay {
   display: flex;
 }
 
-.bylte-overview-image img {
+.cs-overview-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* GREEN BASIL — PROBLEM SECTION */
+
+.gb-problem {
+  padding: 6rem 0 4rem;
+}
+
+.gb-problem .section-title {
+  margin-bottom: 2.5rem;
+}
+
+.gb-problem-cards {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+
+/* GREEN BASIL — PROBLEM STATEMENT */
+
+.gb-statement {
+  padding: 8rem 0;
+  text-align: center;
+}
+
+.gb-statement .section-label {
+  margin-bottom: 1.5rem;
+}
+
+.gb-statement .section-title {
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+/* GREEN BASIL — PROCESS SECTION */
+
+.gb-process {
+  padding: 6rem 0 4rem;
+}
+
+.gb-process .section-title {
+  margin-bottom: 2.5rem;
+}
+
+.gb-process-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  border: 1px solid #a7a7a7;
+  border-radius: 0.75rem;
+  padding: 2.5rem;
+  background: #f6f6f6;
+}
+
+.gb-process-frame img {
+  width: 45%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+}
+
+.gb-process-arrow {
+  font-size: 1.5rem;
+  color: #000000;
+  flex-shrink: 0;
+}
+
+/* GREEN BASIL — RESEARCH SECTION */
+
+.gb-research {
+  padding: 6rem 0 4rem;
+}
+
+.gb-research .section-title {
+  margin-bottom: 2.5rem;
+}
+
+.gb-research-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.gb-research-cards .caption {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gb-research-cards .card-title {
+  font-size: 1.75rem;
+  margin: 0;
+  padding-bottom: 0.5rem;
+}
+
+.gb-research-cards .caption p:not(.card-title) {
+  margin: 0;
+}
+
+/* GREEN BASIL overrides — narrower info card, height-matched image */
+
+.cs-overview--gb .cs-overview-grid {
+  grid-template-columns: minmax(0, 22rem) minmax(0, 1fr);
+  align-items: stretch;
+}
+
+/* Make left column and card fill the row height */
+.cs-overview--gb .cs-overview-left,
+.cs-overview--gb .cs-info-card {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Image frame stretches to match info card height */
+.cs-overview--gb .cs-overview-image {
+  height: 100%;
+  min-height: 28rem;
+  align-items: center;
+  justify-content: center;
+  background: #f6f6f6;
+}
+
+.cs-overview--gb .cs-overview-image img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .problem-statement.bylte {
@@ -576,6 +756,34 @@ body.nav-open .menu-overlay {
 
 .highlight {
   color: #000000;
+}
+
+.card-title {
+  font-family: "Aileron", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #000000;
+  margin: 0 0 0.35rem 0;
+  line-height: 1.2;
+}
+
+.gb-problem-cards .caption {
+  width: 30rem;
+  flex-shrink: 0;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gb-problem-cards .card-title {
+  font-size: 1.75rem;
+  margin: 0;
+  padding-bottom: 0.5rem;
+}
+
+.gb-problem-cards .caption p {
+  margin: 0;
 }
 
 .section-principles-row {
