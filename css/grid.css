@@ -1064,6 +1064,21 @@ h2.cs-year {
   padding-top: 0rem;
 }
 
+  /* GREEN BASIL — COMPLEXITY */
+  .gb-complexity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* GREEN BASIL — SOLUTION */
+  .gb-solution-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* GREEN BASIL — REFLECTION */
+  .gb-reflection-grid {
+    grid-template-columns: 1fr;
+  }
+
   /* GREEN BASIL — PROCESS */
   .gb-process-frame {
     flex-direction: column;
