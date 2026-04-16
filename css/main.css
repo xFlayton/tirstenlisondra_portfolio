@@ -984,7 +984,7 @@ body.nav-open .menu-overlay {
 /* Feedback and Iteration section */
 
 .feedback-step .section-title {
-  color: #7777;
+  color: #777;
 }
 
 .bylte-finished-product {
@@ -1000,6 +1000,10 @@ body.nav-open .menu-overlay {
 /*  REFLECTION SECTION  */
 .bylte-reflection {
   padding: 12rem 0;
+}
+
+.bylte-reflection .section-title {
+  color: #777;
 }
 
 .reflection-item {
