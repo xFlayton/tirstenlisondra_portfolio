@@ -412,7 +412,8 @@ h2.cs-year {
 }
 
 .bylte-wallet-grid .bylte-wallet-mockups img {
-  width: 25rem;
+  width: 100%;
+  max-width: 25rem;
   height: auto;
   display: block;
 }
@@ -948,6 +949,16 @@ h2.cs-year {
     min-width: 0;
   }
 
+  /* Bylte: collapse wallet grid before images cause overflow */
+  .bylte-wallet-grid {
+    flex-direction: column;
+  }
+
+  .bylte-wallet-frame {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   .about-title {
     font-size: 3rem;
   }
@@ -1026,6 +1037,11 @@ h2.cs-year {
   .menu-overlay .container.flex {
     padding: 0 1rem;
     box-sizing: border-box;
+  }
+
+  /* Strengthen the text area contrast on project cards at mobile */
+  .project-item-media::after {
+    background: linear-gradient(to bottom, transparent 45%, rgba(239, 239, 237, 0.88) 100%);
   }
 
   .menu-overlay .container.flex {
@@ -1153,12 +1169,26 @@ h2.cs-year {
   height: 24rem;
 }
 
+/* Bylte: overview info card above image on mobile */
+.cs-overview--gb .cs-overview-left {
+  order: 1;
+}
+.cs-overview--gb .cs-overview-right {
+  order: 2;
+}
+
   .overview-video video {
     height: auto;
   }
 
   .research-row {
     grid-template-columns: 1fr;
+  }
+
+  /* Bylte: stack competition images on mobile */
+  .competition-images {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .bylte-principles-grid {

@@ -115,7 +115,7 @@
       <!-- RIGHT: COVER -->
       <div class="overview-right">
         <iframe
-          src="https://player.vimeo.com/video/1183609195?autoplay=1&loop=1&muted=1&background=1"
+          data-src="https://player.vimeo.com/video/1183609195?autoplay=1&loop=1&muted=1&background=1"
           title="Mosaic app overview demo"
           frameborder="0"
           allow="autoplay; fullscreen; picture-in-picture"
@@ -214,7 +214,7 @@
 
     <div class="guiding-question-video">
       <iframe
-  src="https://player.vimeo.com/video/1151471518?background=1&autoplay=1&muted=1&loop=1&autopause=0&controls=0&title=0&byline=0&portrait=0"
+  data-src="https://player.vimeo.com/video/1151471518?background=1&autoplay=1&muted=1&loop=1&autopause=0&controls=0&title=0&byline=0&portrait=0"
   frameborder="0"
   allow="autoplay; fullscreen; picture-in-picture"
   allowfullscreen
@@ -474,12 +474,11 @@
 
     <div class="final-results-video">
       <iframe
-        src="https://player.vimeo.com/video/1170197978"
+        data-src="https://player.vimeo.com/video/1170197978"
         title="Mosaic final results video"
         frameborder="0"
         allow="autoplay; fullscreen; picture-in-picture"
         allowfullscreen
-        loading="lazy"
       ></iframe>
     </div>
   </div>
@@ -538,6 +537,7 @@
     </footer>
 
     <script src="../js/clock.js" defer></script>
+    <script src="../js/lazy-vimeo.js" defer></script>
     <!-- CUSTOM MOUSE CURSOR -->
     <div id="cursor-follower"></div>
     <script src="../js/cursor.js" defer></script>
